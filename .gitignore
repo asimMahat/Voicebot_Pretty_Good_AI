@@ -1,0 +1,11 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+venv/
+transcripts/
+*.egg-info/
+dist/
+build/
+.DS_Store
+/voice_bot
