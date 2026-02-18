@@ -1,0 +1,22 @@
+Call Transcript — New Patient Scheduling
+Date     : 2026-02-18 13:01:55
+Duration : 29.1s
+Scenario : new_patient_scheduling
+================================================================
+
+[AI AGENT   ]: This call may be recorded for quality and training purposes.
+
+[PATIENT BOT]: Hi, I'm a new patient and I'd like to schedule an appointment.
+
+[AI AGENT   ]: Thank you for calling PIP.
+
+[PATIENT BOT]: You're welcome! I'd like to schedule a general checkup.
+
+[AI AGENT   ]: Got it.
+
+[PATIENT BOT]: Great! When do you have availability for new patients?
+
+[AI AGENT   ]: Help you schedule a general checkup, would you like to create a demo patient
+
+[PATIENT BOT]: No, I’m looking to schedule my appointment as a new patient. What days do you have open?
+

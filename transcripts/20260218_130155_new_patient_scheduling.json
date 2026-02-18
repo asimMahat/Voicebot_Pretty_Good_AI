@@ -1,0 +1,50 @@
+{
+  "scenario_id": "new_patient_scheduling",
+  "scenario_name": "New Patient Scheduling",
+  "start_time": "2026-02-18T13:01:55.307558",
+  "end_time": "2026-02-18T13:02:24.386766",
+  "duration_seconds": 29.1,
+  "message_count": 8,
+  "messages": [
+    {
+      "speaker": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "timestamp": "2026-02-18T13:02:00.911966"
+    },
+    {
+      "speaker": "bot",
+      "text": "Hi, I'm a new patient and I'd like to schedule an appointment.",
+      "timestamp": "2026-02-18T13:02:01.687011"
+    },
+    {
+      "speaker": "agent",
+      "text": "Thank you for calling PIP.",
+      "timestamp": "2026-02-18T13:02:03.805316"
+    },
+    {
+      "speaker": "bot",
+      "text": "You're welcome! I'd like to schedule a general checkup.",
+      "timestamp": "2026-02-18T13:02:04.875549"
+    },
+    {
+      "speaker": "agent",
+      "text": "Got it.",
+      "timestamp": "2026-02-18T13:02:13.566298"
+    },
+    {
+      "speaker": "bot",
+      "text": "Great! When do you have availability for new patients?",
+      "timestamp": "2026-02-18T13:02:15.175538"
+    },
+    {
+      "speaker": "agent",
+      "text": "Help you schedule a general checkup, would you like to create a demo patient",
+      "timestamp": "2026-02-18T13:02:17.413981"
+    },
+    {
+      "speaker": "bot",
+      "text": "No, I\u2019m looking to schedule my appointment as a new patient. What days do you have open?",
+      "timestamp": "2026-02-18T13:02:18.766272"
+    }
+  ]
+}
