@@ -43,23 +43,36 @@ class DeepgramSTT:
             "encoding=mulaw",
             "sample_rate=8000",
             "channels=1",
-            "model=nova-2",
+            "model=nova-2-general",
             "punctuate=true",
             f"endpointing={ENDPOINTING_MS}",
-            "interim_results=false",
+            "interim_results=true",
             f"utterance_end_ms={UTTERANCE_END_MS}",
-            "vad_events=true",
         ])
         url = f"wss://api.deepgram.com/v1/listen?{params}"
 
         extra_headers = {"Authorization": f"Token {DEEPGRAM_API_KEY}"}
 
-        self._ws = await websockets.connect(
-            url,
-            additional_headers=extra_headers,
-            ping_interval=20,
-            ping_timeout=10,
-        )
+        logger.info("Connecting to Deepgram STT: %s", url.split("?")[0])
+
+        try:
+            self._ws = await websockets.connect(
+                url,
+                additional_headers=extra_headers,
+                ping_interval=20,
+                ping_timeout=10,
+            )
+        except websockets.exceptions.InvalidStatus as exc:
+            logger.error(
+                "Deepgram rejected connection: HTTP %s — check your DEEPGRAM_API_KEY",
+                exc.response.status_code,
+            )
+            # Log response body if available
+            body = getattr(exc.response, "body", b"")
+            if body:
+                logger.error("Deepgram response: %s", body.decode(errors="replace"))
+            raise
+
         self._running = True
         self._recv_task = asyncio.create_task(self._receive_loop())
         self._keepalive_task = asyncio.create_task(self._keepalive_loop())

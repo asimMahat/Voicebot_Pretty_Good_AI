@@ -78,7 +78,16 @@ class MediaStreamHandler:
     async def run(self) -> None:
         """Drive the call from connect to hangup."""
         self._stt = DeepgramSTT(self._on_transcript)
-        await self._stt.connect()
+
+        try:
+            await self._stt.connect()
+        except Exception:
+            logger.exception("Failed to connect to Deepgram STT — call will end")
+            self.transcript_logger.add_message(
+                "bot", "[SYSTEM ERROR: Deepgram STT connection failed]"
+            )
+            self.transcript_logger.save()
+            return
 
         self._tasks = [
             asyncio.create_task(self._twilio_receiver(), name="twilio_rx"),

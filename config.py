@@ -13,7 +13,8 @@ TWILIO_AUTH_TOKEN: str = os.getenv("TWILIO_AUTH_TOKEN", "")
 TWILIO_PHONE_NUMBER: str = os.getenv("TWILIO_PHONE_NUMBER", "")  # Your Twilio number
 
 # ── Target ──────────────────────────────────────────────────────────────
-TARGET_PHONE_NUMBER: str = os.getenv("TARGET_PHONE_NUMBER", "+18054398008")
+# TARGET_PHONE_NUMBER: str = os.getenv("TARGET_PHONE_NUMBER")
+TARGET_PHONE_NUMBER: str = os.getenv("TARGET_PHONE_NUMBER")
 
 # ── Deepgram ────────────────────────────────────────────────────────────
 DEEPGRAM_API_KEY: str = os.getenv("DEEPGRAM_API_KEY", "")
