@@ -83,6 +83,74 @@ The server auto-detects the ngrok URL. Each call takes ~1–3 minutes.
 
 ---
 
+## Running Tests
+
+### List available scenarios
+
+```bash
+python run_tests.py --list
+```
+
+This shows all 18 test scenarios with their IDs and descriptions.
+
+### Run specific scenarios
+
+**Single scenario:**
+```bash
+python run_tests.py --scenarios new_patient_scheduling
+python run_tests.py --scenarios prescription_refill
+python run_tests.py --scenarios cancel_appointment
+python run_tests.py --scenarios reschedule_appointment
+```
+
+**Multiple scenarios:**
+```bash
+python run_tests.py --scenarios new_patient_scheduling prescription_refill reschedule_appointment
+```
+
+**Recommended core scenarios to test:**
+```bash
+python run_tests.py --scenarios new_patient_scheduling prescription_refill reschedule_appointment cancel_appointment insurance_question
+```
+
+### Run all scenarios
+
+```bash
+python run_tests.py
+```
+
+This runs all 18 scenarios sequentially. Each call typically takes 60–90 seconds (limited by Pretty Good AI's test line). Total runtime: ~30–45 minutes.
+
+### Customize wait time between calls
+
+```bash
+python run_tests.py --scenarios new_patient_scheduling --wait 60
+```
+
+Default wait is 120 seconds between calls. Use `--wait` to reduce it (minimum recommended: 60 seconds to avoid rate limiting).
+
+### Transcripts location
+
+Transcripts are saved in **per-scenario directories**:
+- `transcripts/new_patient_scheduling/20260219_120000_new_patient_scheduling.txt`
+- `transcripts/cancel_appointment/20260219_120000_cancel_appointment.txt`
+- `transcripts/prescription_refill/20260219_120000_prescription_refill.txt`
+- etc.
+
+Each scenario folder contains both `.txt` (human-readable) and `.json` (machine-readable) transcripts.
+
+### Example: Quick test of core workflows
+
+```bash
+# Start the server first (Terminal 2)
+python main.py
+
+# Then run these 4 core scenarios (Terminal 3)
+python run_tests.py --scenarios new_patient_scheduling prescription_refill reschedule_appointment cancel_appointment
+```
+
+---
+
 ## How it works
 
 ```
@@ -166,12 +234,31 @@ The server auto-detects the ngrok URL. Each call takes ~1–3 minutes.
 
 ## Transcripts
 
-After running calls, transcripts are saved to `transcripts/` in two formats:
+After running calls, transcripts are saved to **per-scenario subdirectories** under `transcripts/`:
 
-- **JSON** (`20260216_143022_prescription_refill.json`) — machine-readable with timestamps
-- **TXT** (`20260216_143022_prescription_refill.txt`) — human-readable conversation log
+```
+transcripts/
+├── new_patient_scheduling/
+│   ├── 20260219_120000_new_patient_scheduling.json
+│   └── 20260219_120000_new_patient_scheduling.txt
+├── cancel_appointment/
+│   ├── 20260219_120000_cancel_appointment.json
+│   └── 20260219_120000_cancel_appointment.txt
+└── prescription_refill/
+    └── ...
+```
 
-Each transcript includes both sides of the conversation, labeled `AI AGENT` and `PATIENT BOT`.
+Each transcript includes both sides of the conversation:
+- **JSON** — machine-readable with timestamps, message count, duration
+- **TXT** — human-readable conversation log with labels:
+  - `[AI Agent (PrettyGoodAI)]` — the Pretty Good AI agent's speech
+  - `[Patient Bot (GPT-4o-mini)]` — our bot's simulated patient responses
+
+**Moving existing transcripts:** If you have old transcripts in the root `transcripts/` folder, run:
+```bash
+python scripts/move_transcripts_to_scenario_dirs.py
+```
+This automatically organizes them into the correct scenario subdirectories.
 
 ---
 
@@ -188,6 +275,8 @@ Each transcript includes both sides of the conversation, labeled `AI AGENT` and 
 | `OPENAI_MODEL` | `gpt-4o-mini` | LLM model |
 | `SERVER_PORT` | `8765` | Local server port |
 | `PUBLIC_URL` | (auto-detect) | ngrok HTTPS URL |
-| `MAX_CALL_DURATION` | `180` | Max call length (seconds) |
-| `ENDPOINTING_MS` | `300` | Silence before end-of-speech (ms) |
-| `UTTERANCE_END_MS` | `1200` | Silence before utterance-end event (ms) |
+| `MAX_CALL_DURATION` | `300` | Max call length (seconds) — note: Pretty Good AI test line limits calls to ~60–90s |
+| `ENDPOINTING_MS` | `1000` | Deepgram silence detection — pause length (ms) before marking phrase as final |
+| `UTTERANCE_END_MS` | `2400` | Silence before bot responds (ms) — longer = less mid-sentence interruption |
+| `RESPONSE_DELAY_MS` | `200` | Extra delay after UtteranceEnd before bot speaks (ms) |
+| `SILENCE_KEEPALIVE_S` | `15` | Bot speaks keepalive prompt if no speech for this long (seconds) |
