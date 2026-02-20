@@ -1,0 +1,50 @@
+{
+  "scenario_id": "urgent_symptoms",
+  "scenario_name": "Urgent Symptom Report",
+  "start_time": "2026-02-19T15:27:32.676585",
+  "end_time": "2026-02-19T15:28:29.334214",
+  "duration_seconds": 56.7,
+  "message_count": 8,
+  "messages": [
+    {
+      "speaker": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "timestamp": "2026-02-19T15:27:37.861043"
+    },
+    {
+      "speaker": "bot",
+      "text": "Hi, I've been having really bad headaches and dizziness and I'm not sure if I should come in.",
+      "timestamp": "2026-02-19T15:27:39.061009"
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks for calling PivotPoint Orthopedics, part of Pretty Good AI. Am I speaking with Sarah?",
+      "timestamp": "2026-02-19T15:27:47.102228"
+    },
+    {
+      "speaker": "bot",
+      "text": "No, I'm Karen Williams.",
+      "timestamp": "2026-02-19T15:27:48.098649"
+    },
+    {
+      "speaker": "agent",
+      "text": "I can. Can you please provide the date of birth for the patient you're calling about?",
+      "timestamp": "2026-02-19T15:27:58.599238"
+    },
+    {
+      "speaker": "bot",
+      "text": "Sure, it's July 15, 1962.",
+      "timestamp": "2026-02-19T15:27:59.161955"
+    },
+    {
+      "speaker": "agent",
+      "text": "Me confirm. Your name is Karen Williams, and your date of birth is July fifteenth nineteen sixty two. Is that correct? If so, could you please spell your first and last name for me?",
+      "timestamp": "2026-02-19T15:28:20.000536"
+    },
+    {
+      "speaker": "bot",
+      "text": "Yes, that's correct. It's Karen, K-A-R-E-N, and Williams, W-I-L-L-I-A-M-S.",
+      "timestamp": "2026-02-19T15:28:21.222455"
+    }
+  ]
+}

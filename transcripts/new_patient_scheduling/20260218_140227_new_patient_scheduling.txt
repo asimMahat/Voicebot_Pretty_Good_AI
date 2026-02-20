@@ -1,0 +1,16 @@
+Call Transcript — New Patient Scheduling
+Date     : 2026-02-18 14:02:27
+Duration : 20.6s
+Scenario : new_patient_scheduling
+================================================================
+
+[AI Agent (PrettyGoodAI)  ]: This call may be recorded for quality and training purposes.
+
+[Patient Bot (GPT-4o-mini)]: Hi, I'm a new patient and I'd like to schedule an appointment for a general checkup.
+
+[AI Agent (PrettyGoodAI)  ]: For calling PivotPoint Orthopedics, part of Pretty Good AI.
+
+[AI Agent (PrettyGoodAI)  ]: Am I speaking with Sarah?
+
+[Patient Bot (GPT-4o-mini)]: Yes, this is Sarah.
+

@@ -1,0 +1,65 @@
+{
+  "scenario_id": "reschedule_appointment",
+  "scenario_name": "Reschedule Appointment",
+  "start_time": "2026-02-19T15:38:35.609214",
+  "end_time": "2026-02-19T15:40:04.257884",
+  "duration_seconds": 88.6,
+  "message_count": 11,
+  "messages": [
+    {
+      "speaker": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "timestamp": "2026-02-19T15:38:41.248820"
+    },
+    {
+      "speaker": "bot",
+      "text": "Hey, I need to move my appointment to a different day.",
+      "timestamp": "2026-02-19T15:38:41.980511"
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks for calling Pivot Point Orthopaedics, part of Pretty Good AI. Am I speaking with Sarah?",
+      "timestamp": "2026-02-19T15:38:48.947904"
+    },
+    {
+      "speaker": "bot",
+      "text": "No, this is David Thompson.",
+      "timestamp": "2026-02-19T15:38:49.521196"
+    },
+    {
+      "speaker": "agent",
+      "text": "Got it, David. May I have your date of birth to verify your identity?",
+      "timestamp": "2026-02-19T15:39:01.167207"
+    },
+    {
+      "speaker": "bot",
+      "text": "Sure, it's February 3, 1980.",
+      "timestamp": "2026-02-19T15:39:01.786347"
+    },
+    {
+      "speaker": "agent",
+      "text": "Let me confirm your details. I have your name as David Thompson. And your date of birth as February third nineteen eighty. Could you please spell your first and last name for me?",
+      "timestamp": "2026-02-19T15:39:22.772356"
+    },
+    {
+      "speaker": "bot",
+      "text": "Of course, it's D-A-V-I-D T-H-O-M-P-S-O-N.",
+      "timestamp": "2026-02-19T15:39:23.345422"
+    },
+    {
+      "speaker": "agent",
+      "text": "You like me to look up your record using the phone number you have on file with us? If so, please provide that number. If you're not sure, just let me know. And we can confirm your name and date of birth again.",
+      "timestamp": "2026-02-19T15:39:45.748903"
+    },
+    {
+      "speaker": "bot",
+      "text": "I\u2019m not sure about the number on file right now. Could we just use my name and date of birth?",
+      "timestamp": "2026-02-19T15:39:46.925382"
+    },
+    {
+      "speaker": "agent",
+      "text": "No problem. Could you please confirm your first and last name by spelling them out again?",
+      "timestamp": "2026-02-19T15:40:04.257845"
+    }
+  ]
+}

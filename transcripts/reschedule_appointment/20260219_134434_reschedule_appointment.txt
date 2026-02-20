@@ -1,0 +1,6 @@
+Call Transcript — Reschedule Appointment
+Date     : 2026-02-19 13:44:34
+Duration : 2.3s
+Scenario : reschedule_appointment
+================================================================
+

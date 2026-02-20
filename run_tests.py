@@ -35,7 +35,7 @@ logging.basicConfig(
 logger = logging.getLogger("test_runner")
 
 
-async def wait_for_completion(call_sid: str, timeout: int = 180) -> str:
+async def wait_for_completion(call_sid: str, timeout: int = 300) -> str:
     """Poll Twilio until the call reaches a terminal state."""
     start = time.time()
     terminal = {"completed", "failed", "busy", "no-answer", "canceled"}
@@ -78,7 +78,7 @@ async def run_scenario(
         print(f"  Call SID : {call_sid}")
         print(f"  Waiting for call to complete...")
 
-        status = await wait_for_completion(call_sid, timeout=180)
+        status = await wait_for_completion(call_sid, timeout=300)
         elapsed = time.time() - start
 
         print(f"  Status   : {status}")
@@ -154,7 +154,7 @@ async def run_all(
         print(f"  [{icon:>4}] {r['scenario_id']:<30} — {r['status']}")
 
     print(f"\n  Completed: {succeeded}/{total}   Failed: {failed}/{total}")
-    print(f"  Transcripts saved in: transcripts/")
+    print(f"  Transcripts saved in: transcripts/<scenario_id>/")
     print(f"{'='*64}\n")
 
 

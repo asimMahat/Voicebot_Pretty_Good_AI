@@ -1,0 +1,90 @@
+{
+  "scenario_id": "cancel_appointment",
+  "scenario_name": "Cancel Appointment",
+  "start_time": "2026-02-18T14:39:18.988342",
+  "end_time": "2026-02-18T14:40:45.079708",
+  "duration_seconds": 86.1,
+  "message_count": 16,
+  "messages": [
+    {
+      "speaker": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "timestamp": "2026-02-18T14:39:25.954190"
+    },
+    {
+      "speaker": "bot",
+      "text": "Hi, I need to cancel my appointment.",
+      "timestamp": "2026-02-18T14:39:26.880550"
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks for calling PivotPoint Orthopedics, part of Pretty Good AI. Am I speaking with Sarah?",
+      "timestamp": "2026-02-18T14:39:33.654076"
+    },
+    {
+      "speaker": "bot",
+      "text": "No, this is Jessica Martinez.",
+      "timestamp": "2026-02-18T14:39:34.258105"
+    },
+    {
+      "speaker": "agent",
+      "text": "Got it, Jessica. Can you please provide the date of birth the patient you're calling about?",
+      "timestamp": "2026-02-18T14:39:47.511566"
+    },
+    {
+      "speaker": "bot",
+      "text": "Sure, it\u2019s November 22, 1997.",
+      "timestamp": "2026-02-18T14:39:48.167610"
+    },
+    {
+      "speaker": "agent",
+      "text": "Let me confirm. Your name is Jessica Martinez?",
+      "timestamp": "2026-02-18T14:40:03.411705"
+    },
+    {
+      "speaker": "bot",
+      "text": "Yes, that's correct.",
+      "timestamp": "2026-02-18T14:40:04.041599"
+    },
+    {
+      "speaker": "agent",
+      "text": "And your date of birth is November twenty second nineteen ninety seven. Is that correct? If so, could you please",
+      "timestamp": "2026-02-18T14:40:09.113864"
+    },
+    {
+      "speaker": "bot",
+      "text": "Yes, that's correct. Can you help me with the cancellation?",
+      "timestamp": "2026-02-18T14:40:09.922610"
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks, Jessica. Could you please spell your last name for me to",
+      "timestamp": "2026-02-18T14:40:14.953630"
+    },
+    {
+      "speaker": "bot",
+      "text": "Sure, it's M-A-R-T-I-N-E-Z.",
+      "timestamp": "2026-02-18T14:40:15.661764"
+    },
+    {
+      "speaker": "agent",
+      "text": "I can help with that.",
+      "timestamp": "2026-02-18T14:40:20.493368"
+    },
+    {
+      "speaker": "bot",
+      "text": "Great, thank you! I\u2019d like to cancel my appointment for next Tuesday.",
+      "timestamp": "2026-02-18T14:40:21.184079"
+    },
+    {
+      "speaker": "agent",
+      "text": "I can help with that. To find your record, would you like to use phone number you have on file with us? If so, please provide that number. If you're not sure, let me know, and we'll confirm your name and date of birth again.",
+      "timestamp": "2026-02-18T14:40:44.191387"
+    },
+    {
+      "speaker": "bot",
+      "text": "Yes, you can use my phone number on file. It's the one I'm calling from.",
+      "timestamp": "2026-02-18T14:40:44.992733"
+    }
+  ]
+}

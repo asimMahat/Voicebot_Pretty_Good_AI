@@ -1,0 +1,6 @@
+Call Transcript — Insurance Coverage Question
+Date     : 2026-02-19 12:00:57
+Duration : 0.7s
+Scenario : insurance_question
+================================================================
+

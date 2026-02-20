@@ -13,17 +13,41 @@ import asyncio
 import base64
 import json
 import logging
+import os
+import time
+from pathlib import Path
 
-from starlette.websockets import WebSocket
+from starlette.websockets import WebSocket, WebSocketDisconnect
 
-from deepgram_stt import DeepgramSTT
+from config import (
+    RESPONSE_DELAY_MS,
+    SPEECH_FINAL_DELAY_MS,
+    SILENCE_KEEPALIVE_S,
+    MEDIA_SILENCE_INTERVAL_MS,
+)
+from deepgram_stt import DeepgramSTT, SttEvent
 from deepgram_tts import synthesize_stream
 from llm_service import get_patient_response
 from transcript import TranscriptLogger
 
 logger = logging.getLogger(__name__)
 
+# Directory for TTS audio debug logs
+TTS_AUDIO_DIR = Path("tts_audio_logs")
+TTS_AUDIO_DIR.mkdir(exist_ok=True)
+
+RESPONSE_DELAY = RESPONSE_DELAY_MS / 1000.0
+SPEECH_FINAL_DELAY = SPEECH_FINAL_DELAY_MS / 1000.0
+SILENCE_INTERVAL = MEDIA_SILENCE_INTERVAL_MS / 1000.0  # seconds between silence frames when idle
+
+KEEPALIVE_PROMPTS = [
+    "I'm still here.",
+    "Hello? Are you still there?",
+    "I'm still on the line.",
+]
+
 MULAW_FRAME_SIZE = 160  # 20 ms of μ-law audio at 8 kHz
+SILENCE_FRAME = b"\xff" * MULAW_FRAME_SIZE  # μ-law silence (0xFF = zero amplitude)
 
 
 class MediaStreamHandler:
@@ -69,9 +93,17 @@ class MediaStreamHandler:
         self._response_lock = asyncio.Lock()
         self._speak_task: asyncio.Task | None = None
 
+        # Silence keepalive
+        self._last_activity: float = time.monotonic()
+        self._keepalive_index: int = 0
+
         # Control
         self._stop = asyncio.Event()
         self._tasks: list[asyncio.Task] = []
+        self._bot_initiated_hangup = False  # True if we called _hangup()
+        self._call_end_reason: str | None = None  # twilio_stop_event | websocket_closed | receiver_error_* | None
+        self._websocket_close_code: int | None = None  # WebSocket close code (1000=normal, etc.)
+        self._websocket_close_reason: str | None = None  # WebSocket close reason string
 
     # ── public entry point ──────────────────────────────────────────────
 
@@ -89,10 +121,15 @@ class MediaStreamHandler:
             self.transcript_logger.save()
             return
 
+        self._last_activity = time.monotonic()
+
         self._tasks = [
             asyncio.create_task(self._twilio_receiver(), name="twilio_rx"),
             asyncio.create_task(self._audio_sender(), name="audio_tx"),
+            asyncio.create_task(self._silence_keepalive(), name="keepalive"),
         ]
+
+        # No initial greeting — let Pretty Good AI's agent speak first.
 
         try:
             # Wait until any task finishes (usually twilio_rx on hangup)
@@ -109,11 +146,14 @@ class MediaStreamHandler:
 
     async def _twilio_receiver(self) -> None:
         """Read events from the Twilio Media Streams WebSocket."""
+        msg_count = 0
         try:
             async for raw in self.ws.iter_text():
                 if self._stop.is_set():
+                    logger.info("Twilio receiver: stop flag set after %d messages", msg_count)
                     break
 
+                msg_count += 1
                 data = json.loads(raw)
                 event = data.get("event")
 
@@ -133,38 +173,155 @@ class MediaStreamHandler:
                     )
 
                 elif event == "stop":
-                    logger.info("Twilio stream stopped")
+                    # Log full stop payload for debugging (Twilio may send custom params)
+                    stop_payload = data.get("stop", data)
+                    logger.warning(
+                        "REMOTE HANGUP: Twilio 'stop' event after %d messages — "
+                        "Pretty Good AI or Twilio ended the call. payload=%s",
+                        msg_count,
+                        stop_payload,
+                    )
+                    self._call_end_reason = "twilio_stop_event"
                     break
 
-        except Exception:
-            logger.exception("Twilio receiver error")
+            else:
+                # Loop ended without break = WebSocket closed without "stop" event
+                logger.warning(
+                    "REMOTE HANGUP: WebSocket closed after %d messages (no 'stop' event) — "
+                    "connection dropped by remote or network",
+                    msg_count,
+                )
+                self._call_end_reason = "websocket_closed"
+
+        except WebSocketDisconnect as e:
+            # WebSocket closed with a close code/reason
+            # Common codes: 1000=normal, 1001=going_away, 1006=abnormal_close, 1011=server_error
+            self._websocket_close_code = e.code
+            self._websocket_close_reason = e.reason or ""
+            logger.warning(
+                "REMOTE HANGUP: WebSocket disconnected after %d messages — "
+                "close_code=%d reason=%r",
+                msg_count,
+                e.code,
+                e.reason,
+            )
+            self._call_end_reason = f"websocket_disconnect_code_{e.code}"
+            if not self._stop.is_set():
+                logger.info("Call ended by remote side (WebSocket disconnect)")
+
+        except Exception as e:
+            logger.exception(
+                "Twilio receiver error after %d messages: %s", msg_count, e
+            )
+            self._call_end_reason = f"receiver_error_{type(e).__name__}"
         finally:
+            logger.info("Twilio receiver exiting (%d messages received)", msg_count)
+            if not self._stop.is_set():
+                logger.info("Call ended by remote side (not bot-initiated)")
             self._stop.set()
 
     # ── STT callback ────────────────────────────────────────────────────
 
-    async def _on_transcript(self, text: str, is_utterance_end: bool) -> None:
+    async def _on_transcript(self, text: str, event: SttEvent) -> None:
         """
         Called by DeepgramSTT whenever a transcript result arrives.
 
-        We accumulate ``is_final`` fragments and generate a response once
-        ``speech_final`` or ``UtteranceEnd`` signals the speaker stopped.
+        Strategy: only respond on UTTERANCE_END (long silence confirmed).
+        FINAL / SPEECH_FINAL just accumulate text and cancel any pending
+        response, since the agent may still be mid-turn with natural pauses
+        between sentences.
         """
+        self._last_activity = time.monotonic()
+
         if text:
             self._accumulated_text += (" " + text) if self._accumulated_text else text
-
-        if is_utterance_end and self._accumulated_text.strip():
-            full_text = self._accumulated_text.strip()
-            self._accumulated_text = ""
-
-            logger.info("Agent said: %s", full_text)
-            self.transcript_logger.add_message("agent", full_text)
-            self.conversation_history.append({"role": "user", "content": full_text})
-
-            # Cancel any in-flight response and start a new one
             if self._speak_task and not self._speak_task.done():
                 self._speak_task.cancel()
-            self._speak_task = asyncio.create_task(self._generate_and_speak())
+                self._speak_task = None
+            logger.debug("Accumulated: %s", self._accumulated_text)
+
+        if event == SttEvent.UTTERANCE_END and self._accumulated_text.strip():
+            if self._speak_task and not self._speak_task.done():
+                self._speak_task.cancel()
+            self._speak_task = asyncio.create_task(
+                self._delayed_respond(RESPONSE_DELAY)
+            )
+
+    async def _delayed_respond(self, delay: float) -> None:
+        """Wait *delay* seconds, then log the agent's utterance and respond."""
+        try:
+            await asyncio.sleep(delay)
+        except asyncio.CancelledError:
+            return
+
+        full_text = self._accumulated_text.strip()
+        if not full_text:
+            return
+        self._accumulated_text = ""
+
+        self._last_activity = time.monotonic()
+
+        logger.info("Agent said: %s", full_text)
+        self.transcript_logger.add_message("agent", full_text)
+        self.conversation_history.append({"role": "user", "content": full_text})
+
+        await self._generate_and_speak()
+
+    # ── initial greeting ────────────────────────────────────────────
+
+    async def _send_initial_greeting(self) -> None:
+        """
+        Speak a short greeting when the call connects.
+
+        This serves two purposes:
+          1. Keeps the Twilio media stream alive by sending outbound audio.
+          2. Prompts the Pretty Good AI agent to begin its flow.
+        """
+        await asyncio.sleep(1.5)  # small delay for the call to fully connect
+        if self._stop.is_set():
+            return
+
+        greeting = self.scenario.get(
+            "opening_line", "Hi, I'm calling about an appointment."
+        )
+        logger.info("Sending initial greeting: %s", greeting)
+        self.transcript_logger.add_message("bot", greeting)
+        self.conversation_history.append({"role": "assistant", "content": greeting})
+
+        voice = self.scenario.get("voice", "aura-asteria-en")
+        self._is_speaking = True
+        try:
+            async for chunk in synthesize_stream(greeting, voice):
+                for i in range(0, len(chunk), MULAW_FRAME_SIZE):
+                    frame = chunk[i : i + MULAW_FRAME_SIZE]
+                    await self._audio_queue.put(frame)
+            await self._audio_queue.put(None)
+        except Exception:
+            logger.exception("Failed to send initial greeting")
+            self._is_speaking = False
+
+        self._last_activity = time.monotonic()
+
+    # ── silence keepalive ────────────────────────────────────────────
+
+    async def _silence_keepalive(self) -> None:
+        """If nobody has spoken for a while, say something to keep the call alive."""
+        while not self._stop.is_set():
+            await asyncio.sleep(3)
+            elapsed = time.monotonic() - self._last_activity
+            if elapsed >= SILENCE_KEEPALIVE_S and not self._is_speaking:
+                prompt = KEEPALIVE_PROMPTS[self._keepalive_index % len(KEEPALIVE_PROMPTS)]
+                self._keepalive_index += 1
+                logger.info("Silence keepalive: %s", prompt)
+
+                self._last_activity = time.monotonic()
+                voice = self.scenario.get("voice", "aura-asteria-en")
+                self._is_speaking = True
+                async for chunk in synthesize_stream(prompt, voice):
+                    for i in range(0, len(chunk), MULAW_FRAME_SIZE):
+                        frame = chunk[i : i + MULAW_FRAME_SIZE]
+                        await self._audio_queue.put(frame)
+                await self._audio_queue.put(None)
 
     # ── response generation + TTS ───────────────────────────────────────
 
@@ -191,31 +348,60 @@ class MediaStreamHandler:
             end_call = "[END_CALL]" in response
             clean = response.replace("[END_CALL]", "").strip()
 
+            if end_call:
+                logger.warning(
+                    "[END_CALL] detected in LLM response — bot will hang up. "
+                    "Full response: %s",
+                    response,
+                )
+
             if clean:
                 self.transcript_logger.add_message("bot", clean)
                 self.conversation_history.append(
                     {"role": "assistant", "content": clean}
                 )
 
-                # Stream TTS audio into the playback queue
+                # Stream TTS audio into the playback queue + log to file
                 self._is_speaking = True
                 self._barge_in.clear()
                 voice = self.scenario.get("voice", "aura-asteria-en")
+
+                # Create audio log file for this utterance
+                timestamp = time.strftime("%Y%m%d_%H%M%S")
+                audio_log_path = (
+                    TTS_AUDIO_DIR
+                    / f"{timestamp}_{self.scenario['id']}_{len(self.conversation_history)}.mulaw"
+                )
+                audio_bytes = bytearray()
 
                 async for chunk in synthesize_stream(clean, voice):
                     if self._barge_in.is_set():
                         logger.info("Barge-in detected — stopping TTS playback")
                         break
+                    audio_bytes.extend(chunk)
                     # Split into 20 ms frames for Twilio
                     for i in range(0, len(chunk), MULAW_FRAME_SIZE):
                         frame = chunk[i : i + MULAW_FRAME_SIZE]
                         await self._audio_queue.put(frame)
 
+                # Save audio to file for debugging
+                if audio_bytes:
+                    with open(audio_log_path, "wb") as f:
+                        f.write(audio_bytes)
+                    logger.debug(
+                        "TTS audio saved → %s (%d bytes, text: %s)",
+                        audio_log_path.name,
+                        len(audio_bytes),
+                        clean[:50],
+                    )
+
                 # Sentinel: end-of-utterance
                 await self._audio_queue.put(None)
 
             if end_call:
-                logger.info("End-of-call signal received — hanging up in 2 s")
+                logger.warning(
+                    "Bot-initiated hangup: [END_CALL] signal — hanging up in 2 s"
+                )
                 await asyncio.sleep(2)
                 await self._hangup()
 
@@ -228,35 +414,43 @@ class MediaStreamHandler:
         """
         Pull frames from the audio queue and push them to Twilio at ~20 ms
         intervals to maintain natural playback cadence.
+
+        When the queue is empty, send silence frames at SILENCE_INTERVAL to keep
+        the Twilio Media Stream (and any proxy/ngrok) alive and prevent cutoffs.
         """
+        silence_interval = max(0.05, SILENCE_INTERVAL)  # at least 50 ms
         while not self._stop.is_set():
             try:
                 frame = await asyncio.wait_for(
-                    self._audio_queue.get(), timeout=0.1
+                    self._audio_queue.get(), timeout=silence_interval
                 )
             except asyncio.TimeoutError:
+                # Send a silence frame to keep stream alive (prevents proxy/Twilio idle disconnect)
+                if self.stream_sid:
+                    await self._send_frame(SILENCE_FRAME)
                 continue
 
             if frame is None:
-                # End-of-utterance sentinel
                 self._is_speaking = False
                 continue
 
-            if self.stream_sid:
-                payload = base64.b64encode(frame).decode("ascii")
-                msg = {
-                    "event": "media",
-                    "streamSid": self.stream_sid,
-                    "media": {"payload": payload},
-                }
-                try:
-                    await self.ws.send_json(msg)
-                except Exception:
-                    logger.warning("Failed to send audio frame to Twilio")
-                    break
+            await self._send_frame(frame)
+            await asyncio.sleep(0.02)
 
-                # Pace at ~20 ms per frame
-                await asyncio.sleep(0.02)
+    async def _send_frame(self, frame: bytes) -> None:
+        """Send a single audio frame to Twilio."""
+        if not self.stream_sid:
+            return
+        payload = base64.b64encode(frame).decode("ascii")
+        msg = {
+            "event": "media",
+            "streamSid": self.stream_sid,
+            "media": {"payload": payload},
+        }
+        try:
+            await self.ws.send_json(msg)
+        except Exception:
+            logger.warning("Failed to send audio frame to Twilio")
 
     # ── barge-in / clear ────────────────────────────────────────────────
 
@@ -288,12 +482,20 @@ class MediaStreamHandler:
         """End the Twilio call via REST API."""
         from call_manager import hangup_call
 
+        self._bot_initiated_hangup = True
+        self._call_end_reason = "bot_hangup"
         if self.call_sid:
+            logger.warning(
+                "BOT-INITIATED HANGUP: Calling Twilio API to end call %s",
+                self.call_sid,
+            )
             try:
                 await hangup_call(self.call_sid)
-                logger.info("Call %s hung up", self.call_sid)
+                logger.warning("Call %s successfully hung up by bot", self.call_sid)
             except Exception:
                 logger.exception("Failed to hang up call %s", self.call_sid)
+        else:
+            logger.warning("BOT-INITIATED HANGUP: No call_sid available")
         self._stop.set()
 
     # ── cleanup ─────────────────────────────────────────────────────────
@@ -302,6 +504,56 @@ class MediaStreamHandler:
         """Release resources and persist the transcript."""
         self._stop.set()
 
+        # ----- DEBUG: Unmissable call-end summary (check SERVER terminal, not test runner) -----
+        ended_by = "bot" if self._bot_initiated_hangup else "remote"
+        reason = self._call_end_reason or ("bot_hangup" if self._bot_initiated_hangup else "unknown")
+        logger.warning(
+            "========== CALL END ========== ended_by=%s reason=%s scenario=%s",
+            ended_by,
+            reason,
+            self.scenario["id"],
+        )
+        if self._bot_initiated_hangup:
+            logger.warning("  -> Bot ended call (LLM returned [END_CALL])")
+        else:
+            logger.warning(
+                "  -> Remote ended call (Pretty Good AI agent or Twilio). reason=%s",
+                reason,
+            )
+            if self._websocket_close_code is not None:
+                logger.warning(
+                    "  -> WebSocket close_code=%d reason=%r",
+                    self._websocket_close_code,
+                    self._websocket_close_reason or "(none)",
+                )
+            
+            # Query Twilio API for call details to understand why Twilio ended it
+            if self.call_sid:
+                from call_manager import get_call_details
+                call_details = await get_call_details(self.call_sid)
+                if call_details:
+                    ended_by_twilio = call_details.get("ended_by")
+                    logger.warning(
+                        "  -> Twilio call details: status=%s duration=%ss ended_by=%s error_code=%s error_message=%s",
+                         call_details.get("status"),
+                        call_details.get("duration"),
+                        ended_by_twilio or "(unknown)",
+                        call_details.get("error_code"),
+                        call_details.get("error_message"),
+                    )
+                    if ended_by_twilio:
+                        if ended_by_twilio == "caller":
+                            logger.warning("  -> 📞 Twilio says: Caller (our bot) ended the call")
+                        elif ended_by_twilio == "callee":
+                            logger.warning("  -> 📞 Twilio says: Callee (Pretty Good AI agent) ended the call")
+                    if call_details.get("error_code") or call_details.get("error_message"):
+                        logger.warning(
+                            "  -> ⚠️  Twilio error: code=%s message=%s",
+                            call_details.get("error_code"),
+                            call_details.get("error_message"),
+                        )
+        # ----------------------------------------------------------------------------------------
+
         if self._stt:
             await self._stt.close()
 
@@ -309,9 +561,18 @@ class MediaStreamHandler:
             if not t.done():
                 t.cancel()
 
+        remaining = self._accumulated_text.strip()
+        if remaining:
+            logger.info("Agent said (end-of-call): %s", remaining)
+            self.transcript_logger.add_message("agent", remaining)
+            self._accumulated_text = ""
+
         self.transcript_logger.save()
+
         logger.info(
-            "Call finished — scenario=%s, messages=%d",
+            "Call finished — scenario=%s, messages=%d, ended_by=%s, reason=%s",
             self.scenario["id"],
             len(self.transcript_logger.messages),
+            ended_by,
+            reason,
         )

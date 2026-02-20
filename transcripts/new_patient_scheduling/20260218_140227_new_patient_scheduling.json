@@ -1,0 +1,35 @@
+{
+  "scenario_id": "new_patient_scheduling",
+  "scenario_name": "New Patient Scheduling",
+  "start_time": "2026-02-18T14:02:27.025897",
+  "end_time": "2026-02-18T14:02:47.582531",
+  "duration_seconds": 20.6,
+  "message_count": 5,
+  "messages": [
+    {
+      "speaker": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "timestamp": "2026-02-18T14:02:33.891855"
+    },
+    {
+      "speaker": "bot",
+      "text": "Hi, I'm a new patient and I'd like to schedule an appointment for a general checkup.",
+      "timestamp": "2026-02-18T14:02:35.193846"
+    },
+    {
+      "speaker": "agent",
+      "text": "For calling PivotPoint Orthopedics, part of Pretty Good AI.",
+      "timestamp": "2026-02-18T14:02:38.632071"
+    },
+    {
+      "speaker": "agent",
+      "text": "Am I speaking with Sarah?",
+      "timestamp": "2026-02-18T14:02:40.399897"
+    },
+    {
+      "speaker": "bot",
+      "text": "Yes, this is Sarah.",
+      "timestamp": "2026-02-18T14:02:41.081075"
+    }
+  ]
+}

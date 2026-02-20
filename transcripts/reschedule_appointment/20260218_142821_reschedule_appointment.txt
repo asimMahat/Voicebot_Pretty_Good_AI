@@ -1,0 +1,14 @@
+Call Transcript — Reschedule Appointment
+Date     : 2026-02-18 14:28:21
+Duration : 34.3s
+Scenario : reschedule_appointment
+================================================================
+
+[AI Agent (PrettyGoodAI)  ]: This call may be recorded for quality and training purposes.
+
+[Patient Bot (GPT-4o-mini)]: Hey, I need to move my appointment to a different day.
+
+[AI Agent (PrettyGoodAI)  ]: Thanks for calling PivotPoint Orthopedics, part of Pretty Good AI. Am I speaking with Sarah?
+
+[Patient Bot (GPT-4o-mini)]: No, this is David Thompson. I need to reschedule my appointment.
+

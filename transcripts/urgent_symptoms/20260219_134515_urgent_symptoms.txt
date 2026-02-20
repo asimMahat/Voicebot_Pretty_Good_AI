@@ -1,0 +1,48 @@
+Call Transcript — Urgent Symptom Report
+Date     : 2026-02-19 13:45:15
+Duration : 113.6s
+Scenario : urgent_symptoms
+================================================================
+
+[AI Agent (PrettyGoodAI)  ]: This call may be recorded for quality and training purposes.
+
+[Patient Bot (GPT-4o-mini)]: Hi, I've been having really bad headaches and dizziness, and I'm not sure if I should come in.
+
+[AI Agent (PrettyGoodAI)  ]: Thanks for calling PivotPoint Orthopaedics. Part of Pretty Good a am I speaking with Sarah?
+
+[Patient Bot (GPT-4o-mini)]: No, this is Karen Williams.
+
+[AI Agent (PrettyGoodAI)  ]: How may I help you today?
+
+[Patient Bot (GPT-4o-mini)]: I've been having really bad headaches and dizziness for the past couple of days, and I'm not sure if I should come in or what to do.
+
+[AI Agent (PrettyGoodAI)  ]: Got it, Karen. I wanna make sure we help you safely. Can I get your date of birth to verify your information before we continue?
+
+[Patient Bot (GPT-4o-mini)]: Sure, it's March 5, 1962.
+
+[AI Agent (PrettyGoodAI)  ]: Let me confirm your details. I have your name as Karen Williams. And your date of birth as March fifth nineteen sixty two. Is that correct? If so, could you please spell your first and last name for me?
+
+[Patient Bot (GPT-4o-mini)]: Yes, that's correct. It's K-A-R-E-N W-I-L-L-I-A-M-S.
+
+[AI Agent (PrettyGoodAI)  ]: Would you like me to look up your record using the number you have on file with us?
+
+[Patient Bot (GPT-4o-mini)]: Yes, that would be great, thank you.
+
+[AI Agent (PrettyGoodAI)  ]: Would you like me to
+
+[Patient Bot (GPT-4o-mini)]: Yes, please go ahead.
+
+[AI Agent (PrettyGoodAI)  ]: okay. Please
+
+[Patient Bot (GPT-4o-mini)]: Sure, I'll wait.
+
+[AI Agent (PrettyGoodAI)  ]: could you please provide the phone
+
+[Patient Bot (GPT-4o-mini)]: Yes, it's 555-0134.
+
+[AI Agent (PrettyGoodAI)  ]: no problem, Karen.
+
+[Patient Bot (GPT-4o-mini)]: Thank you. Can you tell me if I should come in or do something else about these symptoms?
+
+[AI Agent (PrettyGoodAI)  ]: I understand you're feeling concerned.
+

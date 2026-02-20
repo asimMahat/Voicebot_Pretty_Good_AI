@@ -1,0 +1,45 @@
+{
+  "scenario_id": "cancel_appointment",
+  "scenario_name": "Cancel Appointment",
+  "start_time": "2026-02-19T11:44:26.900990",
+  "end_time": "2026-02-19T11:45:31.202514",
+  "duration_seconds": 64.3,
+  "message_count": 7,
+  "messages": [
+    {
+      "speaker": "bot",
+      "text": "Hi, I need to cancel my appointment that's coming up next Tuesday.",
+      "timestamp": "2026-02-19T11:44:28.853807"
+    },
+    {
+      "speaker": "agent",
+      "text": "This call may be recorded for quality and training purposes. Thanks for calling PivotPoint Orthopedics. Part of Pretty Good a I. Am I speaking with Sarah?",
+      "timestamp": "2026-02-19T11:44:43.052315"
+    },
+    {
+      "speaker": "bot",
+      "text": "No, this is Jessica Martinez.",
+      "timestamp": "2026-02-19T11:44:44.561041"
+    },
+    {
+      "speaker": "agent",
+      "text": "Got it. May I have Martinez's date of birth to help with your request?",
+      "timestamp": "2026-02-19T11:44:58.957850"
+    },
+    {
+      "speaker": "bot",
+      "text": "Sure, it's November 22, 1997.",
+      "timestamp": "2026-02-19T11:44:59.813466"
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks. I'll also need Martinez's last name to look up the record. Could you please provide the full name?",
+      "timestamp": "2026-02-19T11:45:19.983220"
+    },
+    {
+      "speaker": "bot",
+      "text": "It's Jessica Martinez.",
+      "timestamp": "2026-02-19T11:45:21.187307"
+    }
+  ]
+}

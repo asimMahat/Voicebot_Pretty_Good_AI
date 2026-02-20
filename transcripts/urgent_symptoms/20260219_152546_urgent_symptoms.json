@@ -1,0 +1,25 @@
+{
+  "scenario_id": "urgent_symptoms",
+  "scenario_name": "Urgent Symptom Report",
+  "start_time": "2026-02-19T15:25:46.333409",
+  "end_time": "2026-02-19T15:26:02.016317",
+  "duration_seconds": 15.7,
+  "message_count": 3,
+  "messages": [
+    {
+      "speaker": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "timestamp": "2026-02-19T15:25:52.002037"
+    },
+    {
+      "speaker": "bot",
+      "text": "Hi, I've been having really bad headaches and dizziness and I'm not sure if I should come in.",
+      "timestamp": "2026-02-19T15:25:52.716298"
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks for calling PivotPoint Orthopedics. Part of Pretty Good AI. Am I speaking with Sarah?",
+      "timestamp": "2026-02-19T15:26:02.016286"
+    }
+  ]
+}

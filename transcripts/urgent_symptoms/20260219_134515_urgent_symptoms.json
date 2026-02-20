@@ -1,0 +1,115 @@
+{
+  "scenario_id": "urgent_symptoms",
+  "scenario_name": "Urgent Symptom Report",
+  "start_time": "2026-02-19T13:45:15.461622",
+  "end_time": "2026-02-19T13:47:09.071408",
+  "duration_seconds": 113.6,
+  "message_count": 21,
+  "messages": [
+    {
+      "speaker": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "timestamp": "2026-02-19T13:45:21.091461"
+    },
+    {
+      "speaker": "bot",
+      "text": "Hi, I've been having really bad headaches and dizziness, and I'm not sure if I should come in.",
+      "timestamp": "2026-02-19T13:45:22.140687"
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks for calling PivotPoint Orthopaedics. Part of Pretty Good a am I speaking with Sarah?",
+      "timestamp": "2026-02-19T13:45:29.589419"
+    },
+    {
+      "speaker": "bot",
+      "text": "No, this is Karen Williams.",
+      "timestamp": "2026-02-19T13:45:30.633073"
+    },
+    {
+      "speaker": "agent",
+      "text": "How may I help you today?",
+      "timestamp": "2026-02-19T13:45:33.170687"
+    },
+    {
+      "speaker": "bot",
+      "text": "I've been having really bad headaches and dizziness for the past couple of days, and I'm not sure if I should come in or what to do.",
+      "timestamp": "2026-02-19T13:45:34.005360"
+    },
+    {
+      "speaker": "agent",
+      "text": "Got it, Karen. I wanna make sure we help you safely. Can I get your date of birth to verify your information before we continue?",
+      "timestamp": "2026-02-19T13:45:54.088605"
+    },
+    {
+      "speaker": "bot",
+      "text": "Sure, it's March 5, 1962.",
+      "timestamp": "2026-02-19T13:45:54.833115"
+    },
+    {
+      "speaker": "agent",
+      "text": "Let me confirm your details. I have your name as Karen Williams. And your date of birth as March fifth nineteen sixty two. Is that correct? If so, could you please spell your first and last name for me?",
+      "timestamp": "2026-02-19T13:46:18.888192"
+    },
+    {
+      "speaker": "bot",
+      "text": "Yes, that's correct. It's K-A-R-E-N W-I-L-L-I-A-M-S.",
+      "timestamp": "2026-02-19T13:46:19.555139"
+    },
+    {
+      "speaker": "agent",
+      "text": "Would you like me to look up your record using the number you have on file with us?",
+      "timestamp": "2026-02-19T13:46:36.672131"
+    },
+    {
+      "speaker": "bot",
+      "text": "Yes, that would be great, thank you.",
+      "timestamp": "2026-02-19T13:46:37.652687"
+    },
+    {
+      "speaker": "agent",
+      "text": "Would you like me to",
+      "timestamp": "2026-02-19T13:46:42.527439"
+    },
+    {
+      "speaker": "bot",
+      "text": "Yes, please go ahead.",
+      "timestamp": "2026-02-19T13:46:42.981478"
+    },
+    {
+      "speaker": "agent",
+      "text": "okay. Please",
+      "timestamp": "2026-02-19T13:46:46.813902"
+    },
+    {
+      "speaker": "bot",
+      "text": "Sure, I'll wait.",
+      "timestamp": "2026-02-19T13:46:47.515187"
+    },
+    {
+      "speaker": "agent",
+      "text": "could you please provide the phone",
+      "timestamp": "2026-02-19T13:46:50.369110"
+    },
+    {
+      "speaker": "bot",
+      "text": "Yes, it's 555-0134.",
+      "timestamp": "2026-02-19T13:46:51.227402"
+    },
+    {
+      "speaker": "agent",
+      "text": "no problem, Karen.",
+      "timestamp": "2026-02-19T13:46:53.767007"
+    },
+    {
+      "speaker": "bot",
+      "text": "Thank you. Can you tell me if I should come in or do something else about these symptoms?",
+      "timestamp": "2026-02-19T13:46:54.597460"
+    },
+    {
+      "speaker": "agent",
+      "text": "I understand you're feeling concerned.",
+      "timestamp": "2026-02-19T13:47:09.071347"
+    }
+  ]
+}

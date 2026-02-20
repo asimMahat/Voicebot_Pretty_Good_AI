@@ -1,0 +1,18 @@
+Call Transcript — Insurance Coverage Question
+Date     : 2026-02-19 12:27:40
+Duration : 51.2s
+Scenario : insurance_question
+================================================================
+
+[AI Agent (PrettyGoodAI)  ]: This call may be recorded for quality and training purposes. Thanks for calling. Thibault Point Orthopaedics, part of Pretty Good AI. Am I speaking with Sarah?
+
+[Patient Bot (GPT-4o-mini)]: Hi, this is Priya Patel. I had a quick question about what insurance you accept.
+
+[AI Agent (PrettyGoodAI)  ]: Got it. To make this So can you please repeat your question?
+
+[Patient Bot (GPT-4o-mini)]: Sure! Do you accept Aetna PPO?
+
+[AI Agent (PrettyGoodAI)  ]: Sorry. Can you please repeat it?
+
+[Patient Bot (GPT-4o-mini)]: Of course! Do you accept Aetna PPO insurance?
+

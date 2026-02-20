@@ -7,6 +7,7 @@ Streams raw μ-law audio from Twilio and returns transcription events.
 import asyncio
 import json
 import logging
+from enum import Enum
 from typing import Callable, Awaitable
 
 import websockets
@@ -16,8 +17,15 @@ from config import DEEPGRAM_API_KEY, ENDPOINTING_MS, UTTERANCE_END_MS
 
 logger = logging.getLogger(__name__)
 
-# Callback signature: (transcript_text: str, is_utterance_end: bool) -> None
-TranscriptCallback = Callable[[str, bool], Awaitable[None]]
+
+class SttEvent(Enum):
+    FINAL = "final"              # is_final text, speech may continue
+    SPEECH_FINAL = "speech_final"  # endpointing detected a pause
+    UTTERANCE_END = "utterance_end"  # long silence — speaker's turn is over
+
+
+# Callback signature: (transcript_text: str, event: SttEvent) -> None
+TranscriptCallback = Callable[[str, "SttEvent"], Awaitable[None]]
 
 
 class DeepgramSTT:
@@ -122,11 +130,11 @@ class DeepgramSTT:
                     speech_final: bool = data.get("speech_final", False)
 
                     if transcript and is_final:
-                        await self._on_transcript(transcript, speech_final)
+                        event = SttEvent.SPEECH_FINAL if speech_final else SttEvent.FINAL
+                        await self._on_transcript(transcript, event)
 
                 elif msg_type == "UtteranceEnd":
-                    # Deepgram signals a long silence — treat as turn end.
-                    await self._on_transcript("", True)
+                    await self._on_transcript("", SttEvent.UTTERANCE_END)
 
         except websockets.exceptions.ConnectionClosed:
             logger.info("Deepgram STT WebSocket closed")

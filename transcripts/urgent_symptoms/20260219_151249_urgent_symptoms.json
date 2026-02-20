@@ -1,0 +1,40 @@
+{
+  "scenario_id": "urgent_symptoms",
+  "scenario_name": "Urgent Symptom Report",
+  "start_time": "2026-02-19T15:12:49.336051",
+  "end_time": "2026-02-19T15:13:28.443680",
+  "duration_seconds": 39.1,
+  "message_count": 6,
+  "messages": [
+    {
+      "speaker": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "timestamp": "2026-02-19T15:12:55.127181"
+    },
+    {
+      "speaker": "bot",
+      "text": "Hi, I've been having really bad headaches and dizziness, and I'm not sure if I should come in.",
+      "timestamp": "2026-02-19T15:12:56.347930"
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks for calling PivotPoint Orthopedics. Card of Pretty Good a I. Am I speaking with Sarah?",
+      "timestamp": "2026-02-19T15:13:02.567011"
+    },
+    {
+      "speaker": "bot",
+      "text": "No, this is Karen Williams. I'm having some health issues and need advice on whether I should come in.",
+      "timestamp": "2026-02-19T15:13:03.608078"
+    },
+    {
+      "speaker": "agent",
+      "text": "Paddock, Karen. I can help with that. May I have your date of birth to verify your information before we continue?",
+      "timestamp": "2026-02-19T15:13:19.965580"
+    },
+    {
+      "speaker": "bot",
+      "text": "Sure, it's April 25th, 1962.",
+      "timestamp": "2026-02-19T15:13:20.871140"
+    }
+  ]
+}

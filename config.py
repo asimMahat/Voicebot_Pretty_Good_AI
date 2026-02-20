@@ -3,35 +3,50 @@ Configuration management — loads settings from environment variables.
 """
 
 import os
+from pathlib import Path
+
 from dotenv import load_dotenv
 
-load_dotenv()
+# Always load .env from the directory containing this file (project root).
+# So the app finds the same .env no matter where you start the server from.
+_env_path = Path(__file__).resolve().parent / ".env"
+load_dotenv(dotenv_path=_env_path)
+
+
+def _getenv(key: str, default: str = "") -> str:
+    """Get env var and strip whitespace (stops trailing newline/space in .env from breaking keys)."""
+    return (os.getenv(key) or default).strip()
+
 
 # ── Twilio ──────────────────────────────────────────────────────────────
-TWILIO_ACCOUNT_SID: str = os.getenv("TWILIO_ACCOUNT_SID", "")
-TWILIO_AUTH_TOKEN: str = os.getenv("TWILIO_AUTH_TOKEN", "")
-TWILIO_PHONE_NUMBER: str = os.getenv("TWILIO_PHONE_NUMBER", "")  # Your Twilio number
+TWILIO_ACCOUNT_SID: str = _getenv("TWILIO_ACCOUNT_SID", "")
+TWILIO_AUTH_TOKEN: str = _getenv("TWILIO_AUTH_TOKEN", "")
+TWILIO_PHONE_NUMBER: str = _getenv("TWILIO_PHONE_NUMBER", "")
 
 # ── Target ──────────────────────────────────────────────────────────────
-# TARGET_PHONE_NUMBER: str = os.getenv("TARGET_PHONE_NUMBER")
-TARGET_PHONE_NUMBER: str = os.getenv("TARGET_PHONE_NUMBER")
+TARGET_PHONE_NUMBER: str = _getenv("TARGET_PHONE_NUMBER", "")
 
 # ── Deepgram ────────────────────────────────────────────────────────────
-DEEPGRAM_API_KEY: str = os.getenv("DEEPGRAM_API_KEY", "")
+DEEPGRAM_API_KEY: str = _getenv("DEEPGRAM_API_KEY", "")
 
 # ── OpenAI ──────────────────────────────────────────────────────────────
-OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY", "")
-OPENAI_MODEL: str = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
+OPENAI_API_KEY: str = _getenv("OPENAI_API_KEY", "")
+OPENAI_MODEL: str = _getenv("OPENAI_MODEL", "gpt-4o-mini")
 
 # ── Server ──────────────────────────────────────────────────────────────
-SERVER_HOST: str = os.getenv("SERVER_HOST", "0.0.0.0")
-SERVER_PORT: int = int(os.getenv("SERVER_PORT", "8765"))
-PUBLIC_URL: str = os.getenv("PUBLIC_URL", "")  # ngrok HTTPS URL
+SERVER_HOST: str = _getenv("SERVER_HOST", "0.0.0.0")
+SERVER_PORT: int = int(_getenv("SERVER_PORT", "8765"))
+PUBLIC_URL: str = _getenv("PUBLIC_URL", "")
 
 # ── Call settings ───────────────────────────────────────────────────────
-MAX_CALL_DURATION: int = int(os.getenv("MAX_CALL_DURATION", "180"))  # seconds
-ENDPOINTING_MS: int = int(os.getenv("ENDPOINTING_MS", "300"))  # Deepgram silence detection
-UTTERANCE_END_MS: int = int(os.getenv("UTTERANCE_END_MS", "1200"))  # Deepgram utterance end
+MAX_CALL_DURATION: int = int(_getenv("MAX_CALL_DURATION", "300"))
+ENDPOINTING_MS: int = int(_getenv("ENDPOINTING_MS", "1000"))
+UTTERANCE_END_MS: int = int(_getenv("UTTERANCE_END_MS", "2400"))  # ms silence before we respond (longer = less mid-sentence cut-off)
+RESPONSE_DELAY_MS: int = int(_getenv("RESPONSE_DELAY_MS", "200"))
+SPEECH_FINAL_DELAY_MS: int = int(_getenv("SPEECH_FINAL_DELAY_MS", "1200"))
+SILENCE_KEEPALIVE_S: float = float(_getenv("SILENCE_KEEPALIVE_S", "15"))
+# How often to send silence to Twilio when we have no speech (keeps stream alive; prevents cutoffs)
+MEDIA_SILENCE_INTERVAL_MS: int = int(_getenv("MEDIA_SILENCE_INTERVAL_MS", "100"))
 
 
 def detect_ngrok_url() -> str:

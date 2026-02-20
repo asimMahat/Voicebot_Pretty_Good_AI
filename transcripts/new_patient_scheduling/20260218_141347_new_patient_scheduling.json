@@ -1,0 +1,75 @@
+{
+  "scenario_id": "new_patient_scheduling",
+  "scenario_name": "New Patient Scheduling",
+  "start_time": "2026-02-18T14:13:47.483566",
+  "end_time": "2026-02-18T14:15:19.638522",
+  "duration_seconds": 92.2,
+  "message_count": 13,
+  "messages": [
+    {
+      "speaker": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "timestamp": "2026-02-18T14:13:54.482641"
+    },
+    {
+      "speaker": "bot",
+      "text": "Hi, I'm a new patient and I'd like to schedule an appointment.",
+      "timestamp": "2026-02-18T14:13:55.357154"
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI. Am I speaking with Sarah?",
+      "timestamp": "2026-02-18T14:14:02.684610"
+    },
+    {
+      "speaker": "bot",
+      "text": "Yes, that's me.",
+      "timestamp": "2026-02-18T14:14:03.168431"
+    },
+    {
+      "speaker": "agent",
+      "text": "Got it. I can help with billing or insurance questions.",
+      "timestamp": "2026-02-18T14:14:08.424589"
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks, Sarah. To help with your billing question, can you please tell me your date of birth?",
+      "timestamp": "2026-02-18T14:14:15.864948"
+    },
+    {
+      "speaker": "bot",
+      "text": "Sure, it\u2019s March 15, 1991.",
+      "timestamp": "2026-02-18T14:14:16.804784"
+    },
+    {
+      "speaker": "agent",
+      "text": "The birthday you gave doesn't match our records, but for demo purposes, I'll accept it. What billing or payment question could I help you with today?",
+      "timestamp": "2026-02-18T14:14:34.963166"
+    },
+    {
+      "speaker": "bot",
+      "text": "Actually, I just want to schedule a new patient appointment for a general checkup.",
+      "timestamp": "2026-02-18T14:14:35.627449"
+    },
+    {
+      "speaker": "agent",
+      "text": "Got it, sir. For a general checkup, we can book a new patient consultation. Let me check which providers and times are available.",
+      "timestamp": "2026-02-18T14:14:57.103441"
+    },
+    {
+      "speaker": "bot",
+      "text": "Great, thank you! I prefer morning appointments if possible.",
+      "timestamp": "2026-02-18T14:14:57.765022"
+    },
+    {
+      "speaker": "agent",
+      "text": "Sarah, we have new patient consultation openings",
+      "timestamp": "2026-02-18T14:15:02.001273"
+    },
+    {
+      "speaker": "bot",
+      "text": "Perfect! What days do you have available?",
+      "timestamp": "2026-02-18T14:15:02.488349"
+    }
+  ]
+}

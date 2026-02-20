@@ -1,0 +1,45 @@
+{
+  "scenario_id": "urgent_symptoms",
+  "scenario_name": "Urgent Symptom Report",
+  "start_time": "2026-02-19T12:18:53.540774",
+  "end_time": "2026-02-19T12:19:35.571141",
+  "duration_seconds": 42.0,
+  "message_count": 7,
+  "messages": [
+    {
+      "speaker": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "timestamp": "2026-02-19T12:18:59.479992"
+    },
+    {
+      "speaker": "bot",
+      "text": "Hi, I've been having really bad headaches and dizziness, and I'm not sure if I should come in.",
+      "timestamp": "2026-02-19T12:19:00.671947"
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks for calling PivotPoint Orthopaedics. Part of Prettyday AI. Am I speaking with Sarah?",
+      "timestamp": "2026-02-19T12:19:07.580625"
+    },
+    {
+      "speaker": "bot",
+      "text": "No, this is Karen Williams.",
+      "timestamp": "2026-02-19T12:19:08.220460"
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks. Karen, to help you further, can I get your date of birth?",
+      "timestamp": "2026-02-19T12:19:19.418054"
+    },
+    {
+      "speaker": "bot",
+      "text": "Sure, it's March 12, 1962.",
+      "timestamp": "2026-02-19T12:19:20.142176"
+    },
+    {
+      "speaker": "agent",
+      "text": "Let me confirm. Your name is Karen Williams?",
+      "timestamp": "2026-02-19T12:19:35.571073"
+    }
+  ]
+}

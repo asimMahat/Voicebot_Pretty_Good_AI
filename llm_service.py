@@ -51,7 +51,10 @@ async def get_patient_response(
             temperature=0.8,
         )
         text = response.choices[0].message.content or ""
-        logger.debug("LLM response: %s", text)
+        if "[END_CALL]" in text:
+            logger.warning("LLM generated [END_CALL]: %s", text)
+        else:
+            logger.debug("LLM response: %s", text)
         return text.strip()
 
     except Exception:

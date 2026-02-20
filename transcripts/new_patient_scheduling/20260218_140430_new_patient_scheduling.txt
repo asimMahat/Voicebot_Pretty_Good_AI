@@ -1,0 +1,68 @@
+Call Transcript — New Patient Scheduling
+Date     : 2026-02-18 14:04:30
+Duration : 127.4s
+Scenario : new_patient_scheduling
+================================================================
+
+[AI Agent (PrettyGoodAI)  ]: This call may be recorded for quality and training purposes.
+
+[Patient Bot (GPT-4o-mini)]: Hi, I'm a new patient and I'd like to schedule an appointment.
+
+[AI Agent (PrettyGoodAI)  ]: Thanks for calling Pivot Point Orthopaedics, part of Pretty Good AI.
+
+[AI Agent (PrettyGoodAI)  ]: I speaking with Sarah?
+
+[Patient Bot (GPT-4o-mini)]: Yes, that’s me!
+
+[AI Agent (PrettyGoodAI)  ]: Got it.
+
+[Patient Bot (GPT-4o-mini)]: Great! I’d like to schedule a general checkup appointment.
+
+[AI Agent (PrettyGoodAI)  ]: Great, Sarah. Can you please
+
+[Patient Bot (GPT-4o-mini)]: Sure! What do you need from me?
+
+[AI Agent (PrettyGoodAI)  ]: Got it.
+
+[Patient Bot (GPT-4o-mini)]: Is there anything else you need to know to schedule the appointment?
+
+[AI Agent (PrettyGoodAI)  ]: I just need your date of birth to get started.
+
+[Patient Bot (GPT-4o-mini)]: My date of birth is March 15, 1991.
+
+[AI Agent (PrettyGoodAI)  ]: Just your date of birth.
+
+[Patient Bot (GPT-4o-mini)]: It's March 15, 1991.
+
+[AI Agent (PrettyGoodAI)  ]: The birthday doesn't match our records, but for demo purposes, I'll accept it. Let me get your appointment scheduled.
+
+[Patient Bot (GPT-4o-mini)]: Thank you! I appreciate it.
+
+[AI Agent (PrettyGoodAI)  ]: Thanks, Sarah. For a general checkup, we offer a new patient consultation or a follow-up consultation. Are you looking for your first visit year? Or is this a follow-up?
+
+[Patient Bot (GPT-4o-mini)]: This would be my first visit.
+
+[AI Agent (PrettyGoodAI)  ]: Perfect. I'll look for new patient consultation openings.
+
+[Patient Bot (GPT-4o-mini)]: Sounds good! Thank you.
+
+[AI Agent (PrettyGoodAI)  ]: Do you have a preferred provider, or would you like the first available?
+
+[Patient Bot (GPT-4o-mini)]: I don’t have a preferred provider; first available is fine.
+
+[AI Agent (PrettyGoodAI)  ]: Got it. Let me check for the first available new patient consult
+
+[Patient Bot (GPT-4o-mini)]: Sure, take your time!
+
+[AI Agent (PrettyGoodAI)  ]: One moment.
+
+[Patient Bot (GPT-4o-mini)]: Of course!
+
+[AI Agent (PrettyGoodAI)  ]: The next available new patient
+
+[Patient Bot (GPT-4o-mini)]: What date and time do you have?
+
+[AI Agent (PrettyGoodAI)  ]: we have two openings for a new patient consultation with doctor duty.
+
+[Patient Bot (GPT-4o-mini)]: What are the available dates and times?
+

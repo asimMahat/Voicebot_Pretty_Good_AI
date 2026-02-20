@@ -90,3 +90,34 @@ def get_call_status(call_sid: str) -> str:
     client = _get_client()
     call = client.calls(call_sid).fetch()
     return call.status
+
+
+async def get_call_details(call_sid: str) -> dict | None:
+    """
+    Fetch full call details from Twilio API including status, duration, and end reason.
+    
+    Returns a dict with call information, or None if the call doesn't exist.
+    """
+    try:
+        client = _get_client()
+        loop = asyncio.get_running_loop()
+        call = await loop.run_in_executor(None, lambda: client.calls(call_sid).fetch())
+        
+        return {
+            "sid": call.sid,
+            "status": call.status,
+            "duration": call.duration,  # seconds
+            "direction": call.direction,
+            "start_time": str(call.start_time),
+            "end_time": str(call.end_time) if call.end_time else None,
+            # Who ended the call: "caller" or "callee" (based on SIP BYE direction)
+            "ended_by": getattr(call, "ended_by", None),
+            # Twilio may provide these fields:
+            "subresource_uris": call.subresource_uris,
+            # Check for any error codes or reasons
+            "error_code": getattr(call, "error_code", None),
+            "error_message": getattr(call, "error_message", None),
+        }
+    except Exception as e:
+        logger.warning("Failed to fetch call details for %s: %s", call_sid, e)
+        return None

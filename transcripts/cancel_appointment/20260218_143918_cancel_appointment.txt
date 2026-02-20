@@ -1,0 +1,38 @@
+Call Transcript — Cancel Appointment
+Date     : 2026-02-18 14:39:18
+Duration : 86.1s
+Scenario : cancel_appointment
+================================================================
+
+[AI Agent (PrettyGoodAI)  ]: This call may be recorded for quality and training purposes.
+
+[Patient Bot (GPT-4o-mini)]: Hi, I need to cancel my appointment.
+
+[AI Agent (PrettyGoodAI)  ]: Thanks for calling PivotPoint Orthopedics, part of Pretty Good AI. Am I speaking with Sarah?
+
+[Patient Bot (GPT-4o-mini)]: No, this is Jessica Martinez.
+
+[AI Agent (PrettyGoodAI)  ]: Got it, Jessica. Can you please provide the date of birth the patient you're calling about?
+
+[Patient Bot (GPT-4o-mini)]: Sure, it’s November 22, 1997.
+
+[AI Agent (PrettyGoodAI)  ]: Let me confirm. Your name is Jessica Martinez?
+
+[Patient Bot (GPT-4o-mini)]: Yes, that's correct.
+
+[AI Agent (PrettyGoodAI)  ]: And your date of birth is November twenty second nineteen ninety seven. Is that correct? If so, could you please
+
+[Patient Bot (GPT-4o-mini)]: Yes, that's correct. Can you help me with the cancellation?
+
+[AI Agent (PrettyGoodAI)  ]: Thanks, Jessica. Could you please spell your last name for me to
+
+[Patient Bot (GPT-4o-mini)]: Sure, it's M-A-R-T-I-N-E-Z.
+
+[AI Agent (PrettyGoodAI)  ]: I can help with that.
+
+[Patient Bot (GPT-4o-mini)]: Great, thank you! I’d like to cancel my appointment for next Tuesday.
+
+[AI Agent (PrettyGoodAI)  ]: I can help with that. To find your record, would you like to use phone number you have on file with us? If so, please provide that number. If you're not sure, let me know, and we'll confirm your name and date of birth again.
+
+[Patient Bot (GPT-4o-mini)]: Yes, you can use my phone number on file. It's the one I'm calling from.
+

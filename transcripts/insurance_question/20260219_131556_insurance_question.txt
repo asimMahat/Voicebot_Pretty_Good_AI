@@ -1,0 +1,36 @@
+Call Transcript — Insurance Coverage Question
+Date     : 2026-02-19 13:15:56
+Duration : 97.9s
+Scenario : insurance_question
+================================================================
+
+[AI Agent (PrettyGoodAI)  ]: This call may be recorded for quality and training purposes.
+
+[Patient Bot (GPT-4o-mini)]: Hi, I had a quick question about what insurance you accept.
+
+[AI Agent (PrettyGoodAI)  ]: Thanks for calling PivotPoint Orthopaedics. Sort of free data AI. I speaking with Sarah?
+
+[Patient Bot (GPT-4o-mini)]: Hi Sarah, I'm Priya Patel. I wanted to ask if you accept Aetna PPO insurance.
+
+[AI Agent (PrettyGoodAI)  ]: Got it. Pre opt out. Before I check on insurance, can you please provide Sarah's date of birth to verify her identity?
+
+[Patient Bot (GPT-4o-mini)]: I'm sorry, I think there might be a misunderstanding. I'm Priya Patel, not Sarah. I'm just calling to ask about the insurance you accept. Do you accept Aetna PPO?
+
+[AI Agent (PrettyGoodAI)  ]: Thanks for clarifying.
+
+[Patient Bot (GPT-4o-mini)]: No problem. Could you let me know if PivotPoint Orthopaedics accepts Aetna PPO?
+
+[AI Agent (PrettyGoodAI)  ]: No problem.
+
+[Patient Bot (GPT-4o-mini)]: Okay, do you know if out-of-network patients have any options available?
+
+[AI Agent (PrettyGoodAI)  ]: Yes. Out of network patients can often be seen at Pivot Point Orthopedics.
+
+[Patient Bot (GPT-4o-mini)]: Great, that's good to know. Is there a self-pay or cash discount available for uninsured visits?
+
+[AI Agent (PrettyGoodAI)  ]: But coverage and costs depend on your specific insurance plan. It's best to con
+
+[Patient Bot (GPT-4o-mini)]: I understand, thank you. Is there a self-pay or cash discount option for those who are uninsured?
+
+[AI Agent (PrettyGoodAI)  ]: Pivot Point Orthopedics does offer self pay options
+

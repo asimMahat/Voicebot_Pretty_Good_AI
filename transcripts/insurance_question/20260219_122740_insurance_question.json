@@ -1,0 +1,40 @@
+{
+  "scenario_id": "insurance_question",
+  "scenario_name": "Insurance Coverage Question",
+  "start_time": "2026-02-19T12:27:40.730072",
+  "end_time": "2026-02-19T12:28:31.933706",
+  "duration_seconds": 51.2,
+  "message_count": 6,
+  "messages": [
+    {
+      "speaker": "agent",
+      "text": "This call may be recorded for quality and training purposes. Thanks for calling. Thibault Point Orthopaedics, part of Pretty Good AI. Am I speaking with Sarah?",
+      "timestamp": "2026-02-19T12:27:55.586302"
+    },
+    {
+      "speaker": "bot",
+      "text": "Hi, this is Priya Patel. I had a quick question about what insurance you accept.",
+      "timestamp": "2026-02-19T12:27:57.118181"
+    },
+    {
+      "speaker": "agent",
+      "text": "Got it. To make this So can you please repeat your question?",
+      "timestamp": "2026-02-19T12:28:12.109093"
+    },
+    {
+      "speaker": "bot",
+      "text": "Sure! Do you accept Aetna PPO?",
+      "timestamp": "2026-02-19T12:28:12.968295"
+    },
+    {
+      "speaker": "agent",
+      "text": "Sorry. Can you please repeat it?",
+      "timestamp": "2026-02-19T12:28:20.965507"
+    },
+    {
+      "speaker": "bot",
+      "text": "Of course! Do you accept Aetna PPO insurance?",
+      "timestamp": "2026-02-19T12:28:21.619726"
+    }
+  ]
+}

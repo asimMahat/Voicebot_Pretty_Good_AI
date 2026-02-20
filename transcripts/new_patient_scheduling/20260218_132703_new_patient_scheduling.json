@@ -1,0 +1,30 @@
+{
+  "scenario_id": "new_patient_scheduling",
+  "scenario_name": "New Patient Scheduling",
+  "start_time": "2026-02-18T13:27:03.406215",
+  "end_time": "2026-02-18T13:27:43.096029",
+  "duration_seconds": 39.7,
+  "message_count": 4,
+  "messages": [
+    {
+      "speaker": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "timestamp": "2026-02-18T13:27:08.940399"
+    },
+    {
+      "speaker": "bot",
+      "text": "Hi, I'm a new patient and I'd like to schedule an appointment.",
+      "timestamp": "2026-02-18T13:27:10.207645"
+    },
+    {
+      "speaker": "agent",
+      "text": "Thank you for calling.",
+      "timestamp": "2026-02-18T13:27:14.438158"
+    },
+    {
+      "speaker": "bot",
+      "text": "You're welcome! I\u2019m looking to schedule a general checkup.",
+      "timestamp": "2026-02-18T13:27:15.041147"
+    }
+  ]
+}

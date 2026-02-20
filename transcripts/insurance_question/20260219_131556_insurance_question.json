@@ -1,0 +1,85 @@
+{
+  "scenario_id": "insurance_question",
+  "scenario_name": "Insurance Coverage Question",
+  "start_time": "2026-02-19T13:15:56.708413",
+  "end_time": "2026-02-19T13:17:34.573277",
+  "duration_seconds": 97.9,
+  "message_count": 15,
+  "messages": [
+    {
+      "speaker": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "timestamp": "2026-02-19T13:16:02.439418"
+    },
+    {
+      "speaker": "bot",
+      "text": "Hi, I had a quick question about what insurance you accept.",
+      "timestamp": "2026-02-19T13:16:03.259447"
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks for calling PivotPoint Orthopaedics. Sort of free data AI. I speaking with Sarah?",
+      "timestamp": "2026-02-19T13:16:10.840581"
+    },
+    {
+      "speaker": "bot",
+      "text": "Hi Sarah, I'm Priya Patel. I wanted to ask if you accept Aetna PPO insurance.",
+      "timestamp": "2026-02-19T13:16:12.017502"
+    },
+    {
+      "speaker": "agent",
+      "text": "Got it. Pre opt out. Before I check on insurance, can you please provide Sarah's date of birth to verify her identity?",
+      "timestamp": "2026-02-19T13:16:28.343640"
+    },
+    {
+      "speaker": "bot",
+      "text": "I'm sorry, I think there might be a misunderstanding. I'm Priya Patel, not Sarah. I'm just calling to ask about the insurance you accept. Do you accept Aetna PPO?",
+      "timestamp": "2026-02-19T13:16:29.566791"
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks for clarifying.",
+      "timestamp": "2026-02-19T13:16:49.215272"
+    },
+    {
+      "speaker": "bot",
+      "text": "No problem. Could you let me know if PivotPoint Orthopaedics accepts Aetna PPO?",
+      "timestamp": "2026-02-19T13:16:50.054485"
+    },
+    {
+      "speaker": "agent",
+      "text": "No problem.",
+      "timestamp": "2026-02-19T13:16:53.895568"
+    },
+    {
+      "speaker": "bot",
+      "text": "Okay, do you know if out-of-network patients have any options available?",
+      "timestamp": "2026-02-19T13:16:54.544114"
+    },
+    {
+      "speaker": "agent",
+      "text": "Yes. Out of network patients can often be seen at Pivot Point Orthopedics.",
+      "timestamp": "2026-02-19T13:17:10.236936"
+    },
+    {
+      "speaker": "bot",
+      "text": "Great, that's good to know. Is there a self-pay or cash discount available for uninsured visits?",
+      "timestamp": "2026-02-19T13:17:11.714709"
+    },
+    {
+      "speaker": "agent",
+      "text": "But coverage and costs depend on your specific insurance plan. It's best to con",
+      "timestamp": "2026-02-19T13:17:17.737555"
+    },
+    {
+      "speaker": "bot",
+      "text": "I understand, thank you. Is there a self-pay or cash discount option for those who are uninsured?",
+      "timestamp": "2026-02-19T13:17:19.023349"
+    },
+    {
+      "speaker": "agent",
+      "text": "Pivot Point Orthopedics does offer self pay options",
+      "timestamp": "2026-02-19T13:17:34.573259"
+    }
+  ]
+}

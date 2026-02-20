@@ -9,6 +9,7 @@ FastAPI server that:
 
 import json
 import logging
+import os
 import sys
 
 from fastapi import FastAPI, WebSocket, HTTPException, Request
@@ -193,9 +194,12 @@ async def health() -> JSONResponse:
 # ── Entry point ─────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
+    # Reload: restart server when code changes (dev only; set RELOAD=0 to disable)
+    reload = os.environ.get("RELOAD", "1").strip().lower() in ("1", "true", "yes")
     uvicorn.run(
         "main:app",
         host=SERVER_HOST,
         port=SERVER_PORT,
         log_level="info",
+        reload=reload,
     )

@@ -1,0 +1,9 @@
+{
+  "scenario_id": "reschedule_appointment",
+  "scenario_name": "Reschedule Appointment",
+  "start_time": "2026-02-19T13:44:34.698864",
+  "end_time": "2026-02-19T13:44:36.978582",
+  "duration_seconds": 2.3,
+  "message_count": 0,
+  "messages": []
+}

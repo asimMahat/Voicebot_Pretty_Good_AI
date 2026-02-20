@@ -1,0 +1,50 @@
+{
+  "scenario_id": "new_patient_scheduling",
+  "scenario_name": "New Patient Scheduling",
+  "start_time": "2026-02-18T13:17:15.762562",
+  "end_time": "2026-02-18T13:17:43.448824",
+  "duration_seconds": 27.7,
+  "message_count": 8,
+  "messages": [
+    {
+      "speaker": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "timestamp": "2026-02-18T13:17:21.380481"
+    },
+    {
+      "speaker": "bot",
+      "text": "Hi, I'm a new patient and I'd like to schedule an appointment.",
+      "timestamp": "2026-02-18T13:17:22.211850"
+    },
+    {
+      "speaker": "agent",
+      "text": "Thank you for call.",
+      "timestamp": "2026-02-18T13:17:24.246296"
+    },
+    {
+      "speaker": "bot",
+      "text": "You're welcome! I\u2019d like to schedule a general checkup, please.",
+      "timestamp": "2026-02-18T13:17:25.257867"
+    },
+    {
+      "speaker": "agent",
+      "text": "Got it.",
+      "timestamp": "2026-02-18T13:17:32.595704"
+    },
+    {
+      "speaker": "bot",
+      "text": "Great! Can you help me with available dates and times?",
+      "timestamp": "2026-02-18T13:17:33.251831"
+    },
+    {
+      "speaker": "agent",
+      "text": "Since you're a new patient, would you like to create",
+      "timestamp": "2026-02-18T13:17:35.278308"
+    },
+    {
+      "speaker": "bot",
+      "text": "Yes, I\u2019d like to create a profile. What do you need from me?",
+      "timestamp": "2026-02-18T13:17:36.094274"
+    }
+  ]
+}

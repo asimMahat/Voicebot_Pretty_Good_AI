@@ -1,0 +1,38 @@
+Call Transcript — Reschedule Appointment
+Date     : 2026-02-18 14:30:56
+Duration : 147.0s
+Scenario : reschedule_appointment
+================================================================
+
+[AI Agent (PrettyGoodAI)  ]: This call may be recorded for quality and training purposes.
+
+[Patient Bot (GPT-4o-mini)]: Hey, I need to move my appointment to a different day.
+
+[AI Agent (PrettyGoodAI)  ]: Thanks for calling PivotPoint Orthopedics. Part of Pretty Good AI. Am I speaking with Sarah?
+
+[Patient Bot (GPT-4o-mini)]: No, this is David Thompson. I’d like to reschedule my appointment.
+
+[AI Agent (PrettyGoodAI)  ]: Got it, David. To help you
+
+[Patient Bot (GPT-4o-mini)]: Great, thank you! I currently have an appointment on Thursday at 2 PM.
+
+[AI Agent (PrettyGoodAI)  ]: Thanks for sharing that. Can you tell me your date of birth so I can verify your identity and help with rescheduling?
+
+[Patient Bot (GPT-4o-mini)]: Sure, it’s February 3, 1980.
+
+[AI Agent (PrettyGoodAI)  ]: Let me confirm. Your name is David Thompson. Your date of birth is February third nineteen eighty. That correct? If so, could you please spell your first and last name for me?
+
+[Patient Bot (GPT-4o-mini)]: Yes, that's correct. My first name is spelled D-A-V-I-D and my last name is T-H-O-M-P-S-O-N.
+
+[AI Agent (PrettyGoodAI)  ]: Would you like me to look up your record using the phone number you have on file with us? If so, please provide that number. You're not sure, just let me know, and we can confirm your name and date of birth again.
+
+[Patient Bot (GPT-4o-mini)]: I'm not sure of the phone number on file. Can we just confirm my name and date of birth again?
+
+[AI Agent (PrettyGoodAI)  ]: No problem. Please spell your first and last name for me one more time. And confirm your date of birth.
+
+[Patient Bot (GPT-4o-mini)]: Sure! My name is David Thompson, spelled D-A-V-I-D T-H-O-M-P-S-O-N. My date of birth is February 3, 1980.
+
+[AI Agent (PrettyGoodAI)  ]: I can't proceed further right now, but I can make sure our clinic support team follows up with you. Please hold on while I document your request for rescheduling your appointment.
+
+[Patient Bot (GPT-4o-mini)]: Okay, thanks for your help. I’ll hold on.
+

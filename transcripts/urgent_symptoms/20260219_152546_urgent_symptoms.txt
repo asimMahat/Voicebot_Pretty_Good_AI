@@ -1,0 +1,12 @@
+Call Transcript — Urgent Symptom Report
+Date     : 2026-02-19 15:25:46
+Duration : 15.7s
+Scenario : urgent_symptoms
+================================================================
+
+[AI Agent (PrettyGoodAI)  ]: This call may be recorded for quality and training purposes.
+
+[Patient Bot (GPT-4o-mini)]: Hi, I've been having really bad headaches and dizziness and I'm not sure if I should come in.
+
+[AI Agent (PrettyGoodAI)  ]: Thanks for calling PivotPoint Orthopedics. Part of Pretty Good AI. Am I speaking with Sarah?
+

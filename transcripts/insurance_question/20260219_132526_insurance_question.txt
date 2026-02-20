@@ -1,0 +1,18 @@
+Call Transcript — Insurance Coverage Question
+Date     : 2026-02-19 13:25:26
+Duration : 47.1s
+Scenario : insurance_question
+================================================================
+
+[AI Agent (PrettyGoodAI)  ]: This call may be recorded for quality and training purposes.
+
+[Patient Bot (GPT-4o-mini)]: Hi, I had a quick question about what insurance you accept.
+
+[AI Agent (PrettyGoodAI)  ]: Thanks for calling PivotPoint Orthopedics, part of Pretty Good AI. Am I speaking with Sarah?
+
+[Patient Bot (GPT-4o-mini)]: No, this is Priya Patel. I have some questions about insurance acceptance.
+
+[AI Agent (PrettyGoodAI)  ]: Alright. I can help with insurance questions. Are you asking about which insurance plans PivotPoint Orthopedics accepts, or do you need to update insurance information for a patient?
+
+[Patient Bot (GPT-4o-mini)]: I'm asking about which insurance plans you accept. Specifically, do you accept Aetna PPO?
+

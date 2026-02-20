@@ -1,0 +1,28 @@
+Call Transcript — Reschedule Appointment
+Date     : 2026-02-19 15:38:35
+Duration : 88.6s
+Scenario : reschedule_appointment
+================================================================
+
+[AI Agent (PrettyGoodAI)  ]: This call may be recorded for quality and training purposes.
+
+[Patient Bot (GPT-4o-mini)]: Hey, I need to move my appointment to a different day.
+
+[AI Agent (PrettyGoodAI)  ]: Thanks for calling Pivot Point Orthopaedics, part of Pretty Good AI. Am I speaking with Sarah?
+
+[Patient Bot (GPT-4o-mini)]: No, this is David Thompson.
+
+[AI Agent (PrettyGoodAI)  ]: Got it, David. May I have your date of birth to verify your identity?
+
+[Patient Bot (GPT-4o-mini)]: Sure, it's February 3, 1980.
+
+[AI Agent (PrettyGoodAI)  ]: Let me confirm your details. I have your name as David Thompson. And your date of birth as February third nineteen eighty. Could you please spell your first and last name for me?
+
+[Patient Bot (GPT-4o-mini)]: Of course, it's D-A-V-I-D T-H-O-M-P-S-O-N.
+
+[AI Agent (PrettyGoodAI)  ]: You like me to look up your record using the phone number you have on file with us? If so, please provide that number. If you're not sure, just let me know. And we can confirm your name and date of birth again.
+
+[Patient Bot (GPT-4o-mini)]: I’m not sure about the number on file right now. Could we just use my name and date of birth?
+
+[AI Agent (PrettyGoodAI)  ]: No problem. Could you please confirm your first and last name by spelling them out again?
+

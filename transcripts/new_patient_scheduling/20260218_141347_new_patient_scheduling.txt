@@ -1,0 +1,32 @@
+Call Transcript — New Patient Scheduling
+Date     : 2026-02-18 14:13:47
+Duration : 92.2s
+Scenario : new_patient_scheduling
+================================================================
+
+[AI Agent (PrettyGoodAI)  ]: This call may be recorded for quality and training purposes.
+
+[Patient Bot (GPT-4o-mini)]: Hi, I'm a new patient and I'd like to schedule an appointment.
+
+[AI Agent (PrettyGoodAI)  ]: Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI. Am I speaking with Sarah?
+
+[Patient Bot (GPT-4o-mini)]: Yes, that's me.
+
+[AI Agent (PrettyGoodAI)  ]: Got it. I can help with billing or insurance questions.
+
+[AI Agent (PrettyGoodAI)  ]: Thanks, Sarah. To help with your billing question, can you please tell me your date of birth?
+
+[Patient Bot (GPT-4o-mini)]: Sure, it’s March 15, 1991.
+
+[AI Agent (PrettyGoodAI)  ]: The birthday you gave doesn't match our records, but for demo purposes, I'll accept it. What billing or payment question could I help you with today?
+
+[Patient Bot (GPT-4o-mini)]: Actually, I just want to schedule a new patient appointment for a general checkup.
+
+[AI Agent (PrettyGoodAI)  ]: Got it, sir. For a general checkup, we can book a new patient consultation. Let me check which providers and times are available.
+
+[Patient Bot (GPT-4o-mini)]: Great, thank you! I prefer morning appointments if possible.
+
+[AI Agent (PrettyGoodAI)  ]: Sarah, we have new patient consultation openings
+
+[Patient Bot (GPT-4o-mini)]: Perfect! What days do you have available?
+

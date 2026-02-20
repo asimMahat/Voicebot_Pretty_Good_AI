@@ -1,0 +1,90 @@
+{
+  "scenario_id": "reschedule_appointment",
+  "scenario_name": "Reschedule Appointment",
+  "start_time": "2026-02-18T14:30:56.834988",
+  "end_time": "2026-02-18T14:33:23.789746",
+  "duration_seconds": 147.0,
+  "message_count": 16,
+  "messages": [
+    {
+      "speaker": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "timestamp": "2026-02-18T14:31:03.796886"
+    },
+    {
+      "speaker": "bot",
+      "text": "Hey, I need to move my appointment to a different day.",
+      "timestamp": "2026-02-18T14:31:04.792520"
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks for calling PivotPoint Orthopedics. Part of Pretty Good AI. Am I speaking with Sarah?",
+      "timestamp": "2026-02-18T14:31:12.039412"
+    },
+    {
+      "speaker": "bot",
+      "text": "No, this is David Thompson. I\u2019d like to reschedule my appointment.",
+      "timestamp": "2026-02-18T14:31:12.873944"
+    },
+    {
+      "speaker": "agent",
+      "text": "Got it, David. To help you",
+      "timestamp": "2026-02-18T14:31:28.279982"
+    },
+    {
+      "speaker": "bot",
+      "text": "Great, thank you! I currently have an appointment on Thursday at 2 PM.",
+      "timestamp": "2026-02-18T14:31:29.188268"
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks for sharing that. Can you tell me your date of birth so I can verify your identity and help with rescheduling?",
+      "timestamp": "2026-02-18T14:31:46.085954"
+    },
+    {
+      "speaker": "bot",
+      "text": "Sure, it\u2019s February 3, 1980.",
+      "timestamp": "2026-02-18T14:31:46.824257"
+    },
+    {
+      "speaker": "agent",
+      "text": "Let me confirm. Your name is David Thompson. Your date of birth is February third nineteen eighty. That correct? If so, could you please spell your first and last name for me?",
+      "timestamp": "2026-02-18T14:32:10.961102"
+    },
+    {
+      "speaker": "bot",
+      "text": "Yes, that's correct. My first name is spelled D-A-V-I-D and my last name is T-H-O-M-P-S-O-N.",
+      "timestamp": "2026-02-18T14:32:11.909244"
+    },
+    {
+      "speaker": "agent",
+      "text": "Would you like me to look up your record using the phone number you have on file with us? If so, please provide that number. You're not sure, just let me know, and we can confirm your name and date of birth again.",
+      "timestamp": "2026-02-18T14:32:36.840961"
+    },
+    {
+      "speaker": "bot",
+      "text": "I'm not sure of the phone number on file. Can we just confirm my name and date of birth again?",
+      "timestamp": "2026-02-18T14:32:37.975127"
+    },
+    {
+      "speaker": "agent",
+      "text": "No problem. Please spell your first and last name for me one more time. And confirm your date of birth.",
+      "timestamp": "2026-02-18T14:32:56.064540"
+    },
+    {
+      "speaker": "bot",
+      "text": "Sure! My name is David Thompson, spelled D-A-V-I-D T-H-O-M-P-S-O-N. My date of birth is February 3, 1980.",
+      "timestamp": "2026-02-18T14:32:57.080218"
+    },
+    {
+      "speaker": "agent",
+      "text": "I can't proceed further right now, but I can make sure our clinic support team follows up with you. Please hold on while I document your request for rescheduling your appointment.",
+      "timestamp": "2026-02-18T14:33:22.746758"
+    },
+    {
+      "speaker": "bot",
+      "text": "Okay, thanks for your help. I\u2019ll hold on.",
+      "timestamp": "2026-02-18T14:33:23.460164"
+    }
+  ]
+}

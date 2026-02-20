@@ -1,0 +1,38 @@
+Call Transcript — New Patient Scheduling
+Date     : 2026-02-18 13:28:32
+Duration : 103.0s
+Scenario : new_patient_scheduling
+================================================================
+
+[AI Agent (PrettyGoodAI)  ]: This call may be recorded for quality and training purposes.
+
+[Patient Bot (GPT-4o-mini)]: Hi, I'm a new patient and I'd like to schedule an appointment.
+
+[AI Agent (PrettyGoodAI)  ]: Thank you for calling Pitt.
+
+[Patient Bot (GPT-4o-mini)]: You're welcome! I’d like to schedule a general checkup, please.
+
+[AI Agent (PrettyGoodAI)  ]: Got it. Before we can schedule your appointment, would you like to create a demo patient profile? I just need your first and last name to get started.
+
+[Patient Bot (GPT-4o-mini)]: Sure! My name is Sarah Johnson.
+
+[AI Agent (PrettyGoodAI)  ]: Your patient profile has been created. And your date of birth is July fourth two thousand for demo purposes. How may I help you today?
+
+[Patient Bot (GPT-4o-mini)]: I’d like to schedule a general checkup appointment, please.
+
+[AI Agent (PrettyGoodAI)  ]: Thanks, Sarah. For a general checkup, we offer a new patient consultation. Let me check available times for you. Do you have a preferred provider? Day, or time of day?
+
+[Patient Bot (GPT-4o-mini)]: I don’t have a preferred provider, but I’d like morning appointments if possible. Any day except Wednesdays works for me.
+
+[AI Agent (PrettyGoodAI)  ]: Got it. I'll look for morning new patient consultation appointments with any provider.
+
+[Patient Bot (GPT-4o-mini)]: Thank you! I appreciate it.
+
+[AI Agent (PrettyGoodAI)  ]: On any day except Wednesdays. Let me check what's available.
+
+[Patient Bot (GPT-4o-mini)]: Sure, take your time!
+
+[AI Agent (PrettyGoodAI)  ]: It looks like there are no morning appointments available this
+
+[Patient Bot (GPT-4o-mini)]: That's okay. Are there any afternoon appointments available?
+

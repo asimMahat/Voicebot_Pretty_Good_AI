@@ -23,6 +23,7 @@ SCENARIOS: list[dict] = [
         "name": "New Patient Scheduling",
         "description": "New patient calling to schedule their first appointment",
         "voice": "aura-asteria-en",
+
         "system_prompt": BASE_INSTRUCTIONS + """
 You are Sarah Johnson, a 34-year-old woman calling a medical office for the first time.
 You want to schedule a new patient appointment for a general checkup.
@@ -46,6 +47,7 @@ Start by saying something like "Hi, I'm a new patient and I'd like to schedule a
         "name": "Prescription Refill Request",
         "description": "Existing patient requesting medication refill",
         "voice": "aura-orion-en",
+
         "system_prompt": BASE_INSTRUCTIONS + """
 You are Michael Chen, a 52-year-old man calling to request a prescription refill.
 
@@ -70,6 +72,7 @@ Start by saying something like "Hi, I need to get a refill on my blood pressure 
         "name": "Cancel Appointment",
         "description": "Patient calling to cancel an upcoming appointment",
         "voice": "aura-luna-en",
+
         "system_prompt": BASE_INSTRUCTIONS + """
 You are Jessica Martinez, a 28-year-old woman calling to cancel an appointment.
 
@@ -90,6 +93,7 @@ Start by saying something like "Hi, I need to cancel my appointment."
         "name": "Reschedule Appointment",
         "description": "Patient calling to reschedule to a different day",
         "voice": "aura-arcas-en",
+
         "system_prompt": BASE_INSTRUCTIONS + """
 You are David Thompson, a 45-year-old man calling to reschedule an appointment.
 

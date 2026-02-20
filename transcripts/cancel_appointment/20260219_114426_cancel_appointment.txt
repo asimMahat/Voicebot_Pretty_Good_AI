@@ -1,0 +1,20 @@
+Call Transcript — Cancel Appointment
+Date     : 2026-02-19 11:44:26
+Duration : 64.3s
+Scenario : cancel_appointment
+================================================================
+
+[Patient Bot (GPT-4o-mini)]: Hi, I need to cancel my appointment that's coming up next Tuesday.
+
+[AI Agent (PrettyGoodAI)  ]: This call may be recorded for quality and training purposes. Thanks for calling PivotPoint Orthopedics. Part of Pretty Good a I. Am I speaking with Sarah?
+
+[Patient Bot (GPT-4o-mini)]: No, this is Jessica Martinez.
+
+[AI Agent (PrettyGoodAI)  ]: Got it. May I have Martinez's date of birth to help with your request?
+
+[Patient Bot (GPT-4o-mini)]: Sure, it's November 22, 1997.
+
+[AI Agent (PrettyGoodAI)  ]: Thanks. I'll also need Martinez's last name to look up the record. Could you please provide the full name?
+
+[Patient Bot (GPT-4o-mini)]: It's Jessica Martinez.
+
