@@ -1,0 +1,14 @@
+Call Transcript — Prescription Refill Request
+Date     : 2026-02-20 10:30:18
+Duration : 21.7s
+Scenario : prescription_refill
+================================================================
+
+[AI Agent (PrettyGoodAI)  ]: This call may be recorded for quality and training purposes.
+
+[Patient Bot (GPT-4O)]: Hi, I need to get a refill on my blood pressure medication.
+
+[AI Agent (PrettyGoodAI)  ]: For calling PivotPoint Orthopedics, part of Pretty Good AI. I speaking with Sarah?
+
+[Patient Bot (GPT-4O)]: Hi, this is Michael Chen, and I actually need to get a refill on my blood pressure medication.
+

@@ -1,0 +1,42 @@
+Call Transcript — Prescription Refill Request
+Date     : 2026-02-20 10:32:14
+Duration : 117.0s
+Scenario : prescription_refill
+================================================================
+
+[AI Agent (PrettyGoodAI)  ]: This call may be recorded for quality and training purposes.
+
+[Patient Bot (GPT-4O)]: Hi, I need to get a refill on my blood pressure medication.
+
+[AI Agent (PrettyGoodAI)  ]: Thanks for calling PivotPoint Orthopedics, part of British AI. Am I speaking with Sarah?
+
+[Patient Bot (GPT-4O)]: No, this is Michael Chen.
+
+[AI Agent (PrettyGoodAI)  ]: Got it, Michael. Can I get your date of birth to verify your identity?
+
+[Patient Bot (GPT-4O)]: Sure, it's July 8, 1973.
+
+[AI Agent (PrettyGoodAI)  ]: I Can you also provide your last name?
+
+[Patient Bot (GPT-4O)]: Of course, it's Chen.
+
+[AI Agent (PrettyGoodAI)  ]: Let me confirm. Your first name is Michael. Your last name is Scent. And your date of birth is July first nineteen seventy three. Is that correct? If so, could you please spell your last name for me?
+
+[Patient Bot (GPT-4O)]: It's actually Chen, spelled C-H-E-N, and my date of birth is July 8, 1973.
+
+[AI Agent (PrettyGoodAI)  ]: You like me to look up your record using the phone number you have on file with us?
+
+[Patient Bot (GPT-4O)]: Yes, please. My phone number is 555-234-5678.
+
+[AI Agent (PrettyGoodAI)  ]: Would you like me to look up your record using
+
+[Patient Bot (GPT-4O)]: Yes, that would be great. Thank you.
+
+[AI Agent (PrettyGoodAI)  ]: me confirm. Can you please provide the full phone number you have on file with us? Will help me look up your record.
+
+[Patient Bot (GPT-4O)]: Sure, it's 555-234-5678.
+
+[AI Agent (PrettyGoodAI)  ]: Let me confirm. I have your phone number as five five five two three four five six seven eight, and your date of birth is July eighth nineteen seventy three. Is that correct?
+
+[Patient Bot (GPT-4O)]: Yes, that's correct.
+

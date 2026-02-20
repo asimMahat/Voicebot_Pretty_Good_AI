@@ -1,0 +1,101 @@
+{
+  "scenario_id": "prescription_refill",
+  "scenario_name": "Prescription Refill Request",
+  "model_name": "gpt-4o",
+  "start_time": "2026-02-20T10:32:14.193680",
+  "end_time": "2026-02-20T10:34:11.161036",
+  "duration_seconds": 117.0,
+  "message_count": 18,
+  "messages": [
+    {
+      "speaker": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "timestamp": "2026-02-20T10:32:19.793824"
+    },
+    {
+      "speaker": "bot",
+      "text": "Hi, I need to get a refill on my blood pressure medication.",
+      "timestamp": "2026-02-20T10:32:20.300067"
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks for calling PivotPoint Orthopedics, part of British AI. Am I speaking with Sarah?",
+      "timestamp": "2026-02-20T10:32:28.215442"
+    },
+    {
+      "speaker": "bot",
+      "text": "No, this is Michael Chen.",
+      "timestamp": "2026-02-20T10:32:28.766557"
+    },
+    {
+      "speaker": "agent",
+      "text": "Got it, Michael. Can I get your date of birth to verify your identity?",
+      "timestamp": "2026-02-20T10:32:39.330656"
+    },
+    {
+      "speaker": "bot",
+      "text": "Sure, it's July 8, 1973.",
+      "timestamp": "2026-02-20T10:32:39.917343"
+    },
+    {
+      "speaker": "agent",
+      "text": "I Can you also provide your last name?",
+      "timestamp": "2026-02-20T10:32:50.432144"
+    },
+    {
+      "speaker": "bot",
+      "text": "Of course, it's Chen.",
+      "timestamp": "2026-02-20T10:32:51.027944"
+    },
+    {
+      "speaker": "agent",
+      "text": "Let me confirm. Your first name is Michael. Your last name is Scent. And your date of birth is July first nineteen seventy three. Is that correct? If so, could you please spell your last name for me?",
+      "timestamp": "2026-02-20T10:33:11.191152"
+    },
+    {
+      "speaker": "bot",
+      "text": "It's actually Chen, spelled C-H-E-N, and my date of birth is July 8, 1973.",
+      "timestamp": "2026-02-20T10:33:11.878134"
+    },
+    {
+      "speaker": "agent",
+      "text": "You like me to look up your record using the phone number you have on file with us?",
+      "timestamp": "2026-02-20T10:33:29.612719"
+    },
+    {
+      "speaker": "bot",
+      "text": "Yes, please. My phone number is 555-234-5678.",
+      "timestamp": "2026-02-20T10:33:30.946007"
+    },
+    {
+      "speaker": "agent",
+      "text": "Would you like me to look up your record using",
+      "timestamp": "2026-02-20T10:33:34.093586"
+    },
+    {
+      "speaker": "bot",
+      "text": "Yes, that would be great. Thank you.",
+      "timestamp": "2026-02-20T10:33:34.990086"
+    },
+    {
+      "speaker": "agent",
+      "text": "me confirm. Can you please provide the full phone number you have on file with us? Will help me look up your record.",
+      "timestamp": "2026-02-20T10:33:47.778370"
+    },
+    {
+      "speaker": "bot",
+      "text": "Sure, it's 555-234-5678.",
+      "timestamp": "2026-02-20T10:33:48.194005"
+    },
+    {
+      "speaker": "agent",
+      "text": "Let me confirm. I have your phone number as five five five two three four five six seven eight, and your date of birth is July eighth nineteen seventy three. Is that correct?",
+      "timestamp": "2026-02-20T10:34:10.577049"
+    },
+    {
+      "speaker": "bot",
+      "text": "Yes, that's correct.",
+      "timestamp": "2026-02-20T10:34:11.012313"
+    }
+  ]
+}

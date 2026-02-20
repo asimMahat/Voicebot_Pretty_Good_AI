@@ -26,9 +26,10 @@ class TranscriptLogger:
     Accumulates messages during a call and persists them on :meth:`save`.
     """
 
-    def __init__(self, scenario_id: str, scenario_name: str = "") -> None:
+    def __init__(self, scenario_id: str, scenario_name: str = "", model_name: str = "gpt-4o-mini") -> None:
         self.scenario_id = scenario_id
         self.scenario_name = scenario_name or scenario_id
+        self.model_name = model_name  # OpenAI model used for patient bot (e.g. "gpt-4o", "gpt-4o-mini")
         self.messages: list[dict] = []
         self.start_time = datetime.now()
         os.makedirs(_scenario_dir(scenario_id), exist_ok=True)
@@ -50,7 +51,9 @@ class TranscriptLogger:
             "timestamp": datetime.now().isoformat(),
         }
         self.messages.append(entry)
-        label = "AI Agent (PrettyGoodAI)" if speaker == "agent" else "Patient Bot (GPT-4o-mini)"
+        # Format model name for display (e.g. "gpt-4o" -> "GPT-4o", "gpt-4o-mini" -> "GPT-4o-mini")
+        model_display = self.model_name.upper()
+        label = "AI Agent (PrettyGoodAI)" if speaker == "agent" else f"Patient Bot ({model_display})"
         logger.info("[%s] %s", label, text)
 
     def save(self) -> str:
@@ -68,6 +71,7 @@ class TranscriptLogger:
         payload = {
             "scenario_id": self.scenario_id,
             "scenario_name": self.scenario_name,
+            "model_name": self.model_name,  # OpenAI model used for patient bot
             "start_time": self.start_time.isoformat(),
             "end_time": end_time.isoformat(),
             "duration_seconds": round(duration, 1),
@@ -84,8 +88,10 @@ class TranscriptLogger:
             f.write(f"Duration : {duration:.1f}s\n")
             f.write(f"Scenario : {self.scenario_id}\n")
             f.write("=" * 64 + "\n\n")
+            # Format model name for display
+            model_display = self.model_name.upper()
             for msg in self.messages:
-                label = "AI Agent (PrettyGoodAI)  " if msg["speaker"] == "agent" else "Patient Bot (GPT-4o-mini)"
+                label = "AI Agent (PrettyGoodAI)  " if msg["speaker"] == "agent" else f"Patient Bot ({model_display})"
                 f.write(f"[{label}]: {msg['text']}\n\n")
 
         logger.info(

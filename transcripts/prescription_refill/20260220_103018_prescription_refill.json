@@ -1,0 +1,31 @@
+{
+  "scenario_id": "prescription_refill",
+  "scenario_name": "Prescription Refill Request",
+  "model_name": "gpt-4o",
+  "start_time": "2026-02-20T10:30:18.634331",
+  "end_time": "2026-02-20T10:30:40.349613",
+  "duration_seconds": 21.7,
+  "message_count": 4,
+  "messages": [
+    {
+      "speaker": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "timestamp": "2026-02-20T10:30:24.281013"
+    },
+    {
+      "speaker": "bot",
+      "text": "Hi, I need to get a refill on my blood pressure medication.",
+      "timestamp": "2026-02-20T10:30:25.026367"
+    },
+    {
+      "speaker": "agent",
+      "text": "For calling PivotPoint Orthopedics, part of Pretty Good AI. I speaking with Sarah?",
+      "timestamp": "2026-02-20T10:30:32.700540"
+    },
+    {
+      "speaker": "bot",
+      "text": "Hi, this is Michael Chen, and I actually need to get a refill on my blood pressure medication.",
+      "timestamp": "2026-02-20T10:30:33.284220"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+Call Transcript — Prescription Refill Request
+Date     : 2026-02-20 10:31:05
+Duration : 6.0s
+Scenario : prescription_refill
+================================================================
+
+[AI Agent (PrettyGoodAI)  ]: This call may be recorded for quality and training purposes.
+

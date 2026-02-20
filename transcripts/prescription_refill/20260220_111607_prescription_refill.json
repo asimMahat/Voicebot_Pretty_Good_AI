@@ -1,0 +1,71 @@
+{
+  "scenario_id": "prescription_refill",
+  "scenario_name": "Prescription Refill Request",
+  "model_name": "gpt-4o",
+  "start_time": "2026-02-20T11:16:07.637999",
+  "end_time": "2026-02-20T11:17:32.167748",
+  "duration_seconds": 84.5,
+  "message_count": 12,
+  "messages": [
+    {
+      "speaker": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "timestamp": "2026-02-20T11:16:13.316282"
+    },
+    {
+      "speaker": "bot",
+      "text": "Hi, I need to get a refill on my blood pressure medication.",
+      "timestamp": "2026-02-20T11:16:14.576220"
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks for calling Pivot Point Orthopedics, part of Pretty Good AI. Am I speaking with Sarah?",
+      "timestamp": "2026-02-20T11:16:24.054031"
+    },
+    {
+      "speaker": "bot",
+      "text": "No, this is Michael Chen.",
+      "timestamp": "2026-02-20T11:16:24.613944"
+    },
+    {
+      "speaker": "agent",
+      "text": "Got it, Michael. Can I get your date of birth to verify your identity?",
+      "timestamp": "2026-02-20T11:16:35.123881"
+    },
+    {
+      "speaker": "bot",
+      "text": "Sure, it's July 8, 1973.",
+      "timestamp": "2026-02-20T11:16:35.604643"
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks. Can you also provide your full name just to confirm?",
+      "timestamp": "2026-02-20T11:16:47.076320"
+    },
+    {
+      "speaker": "bot",
+      "text": "Of course, it's Michael Chen.",
+      "timestamp": "2026-02-20T11:16:47.734636"
+    },
+    {
+      "speaker": "agent",
+      "text": "Just to confirm, can you please spell out your first and last name for me?",
+      "timestamp": "2026-02-20T11:16:59.273737"
+    },
+    {
+      "speaker": "bot",
+      "text": "Certainly, it's M-I-C-H-A-E-L C-H-E-N.",
+      "timestamp": "2026-02-20T11:17:00.044436"
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks for spelling that out. Just to confirm, your name is spelled m I c h e l c h e m. And your date of birth is July first nineteen seventy three. Is that correct?",
+      "timestamp": "2026-02-20T11:17:17.995645"
+    },
+    {
+      "speaker": "bot",
+      "text": "Actually, my name is spelled M-I-C-H-A-E-L C-H-E-N, and my date of birth is July 8, 1973.",
+      "timestamp": "2026-02-20T11:17:18.745992"
+    }
+  ]
+}

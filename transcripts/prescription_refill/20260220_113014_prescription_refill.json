@@ -1,0 +1,61 @@
+{
+  "scenario_id": "prescription_refill",
+  "scenario_name": "Prescription Refill Request",
+  "model_name": "gpt-4o",
+  "start_time": "2026-02-20T11:30:14.332360",
+  "end_time": "2026-02-20T11:31:24.143197",
+  "duration_seconds": 69.8,
+  "message_count": 10,
+  "messages": [
+    {
+      "speaker": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "timestamp": "2026-02-20T11:30:19.969545"
+    },
+    {
+      "speaker": "bot",
+      "text": "Hi, I need to get a refill on my blood pressure medication.",
+      "timestamp": "2026-02-20T11:30:20.688295"
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks for calling PivotPoint Orthopaedics, part of Pretty Good AI. Am I speaking with Sarah?",
+      "timestamp": "2026-02-20T11:30:28.849099"
+    },
+    {
+      "speaker": "bot",
+      "text": "No, this is Michael Chen.",
+      "timestamp": "2026-02-20T11:30:29.304917"
+    },
+    {
+      "speaker": "agent",
+      "text": "Got it, Michael. Can I get your date of birth to verify your identity?",
+      "timestamp": "2026-02-20T11:30:41.090872"
+    },
+    {
+      "speaker": "bot",
+      "text": "Sure, it's July 8, 1973.",
+      "timestamp": "2026-02-20T11:30:41.803151"
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks, Michael. Can you also provide your last name to complete the verification?",
+      "timestamp": "2026-02-20T11:30:53.731851"
+    },
+    {
+      "speaker": "bot",
+      "text": "Of course, it's Chen.",
+      "timestamp": "2026-02-20T11:30:54.326677"
+    },
+    {
+      "speaker": "agent",
+      "text": "Just to confirm, have your name as Michael June. And your date of birth as July first nineteen seventy three. Is that correct? If so, could you please spell your last name for me?",
+      "timestamp": "2026-02-20T11:31:16.107876"
+    },
+    {
+      "speaker": "bot",
+      "text": "It's Chen, spelled C-H-E-N. And the date of birth is July 8, 1973.",
+      "timestamp": "2026-02-20T11:31:17.227601"
+    }
+  ]
+}

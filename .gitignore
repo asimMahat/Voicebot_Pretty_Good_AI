@@ -8,5 +8,6 @@ dist/
 build/
 .DS_Store
 /voice_bot
-tts_audio_logs/
+
 scripts/
+tts_audio_logs/

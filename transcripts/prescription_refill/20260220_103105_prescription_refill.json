@@ -1,0 +1,16 @@
+{
+  "scenario_id": "prescription_refill",
+  "scenario_name": "Prescription Refill Request",
+  "model_name": "gpt-4o",
+  "start_time": "2026-02-20T10:31:05.140954",
+  "end_time": "2026-02-20T10:31:11.185951",
+  "duration_seconds": 6.0,
+  "message_count": 1,
+  "messages": [
+    {
+      "speaker": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "timestamp": "2026-02-20T10:31:11.185920"
+    }
+  ]
+}

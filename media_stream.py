@@ -24,6 +24,7 @@ from config import (
     SPEECH_FINAL_DELAY_MS,
     SILENCE_KEEPALIVE_S,
     MEDIA_SILENCE_INTERVAL_MS,
+    OPENAI_MODEL,
 )
 from deepgram_stt import DeepgramSTT, SttEvent
 from deepgram_tts import synthesize_stream
@@ -77,7 +78,7 @@ class MediaStreamHandler:
         # Conversation state
         self.conversation_history: list[dict] = []
         self.transcript_logger = TranscriptLogger(
-            scenario["id"], scenario.get("name", "")
+            scenario["id"], scenario.get("name", ""), model_name=OPENAI_MODEL
         )
 
         # Audio playback state

@@ -1,0 +1,26 @@
+Call Transcript — Prescription Refill Request
+Date     : 2026-02-20 11:30:14
+Duration : 69.8s
+Scenario : prescription_refill
+================================================================
+
+[AI Agent (PrettyGoodAI)  ]: This call may be recorded for quality and training purposes.
+
+[Patient Bot (GPT-4O)]: Hi, I need to get a refill on my blood pressure medication.
+
+[AI Agent (PrettyGoodAI)  ]: Thanks for calling PivotPoint Orthopaedics, part of Pretty Good AI. Am I speaking with Sarah?
+
+[Patient Bot (GPT-4O)]: No, this is Michael Chen.
+
+[AI Agent (PrettyGoodAI)  ]: Got it, Michael. Can I get your date of birth to verify your identity?
+
+[Patient Bot (GPT-4O)]: Sure, it's July 8, 1973.
+
+[AI Agent (PrettyGoodAI)  ]: Thanks, Michael. Can you also provide your last name to complete the verification?
+
+[Patient Bot (GPT-4O)]: Of course, it's Chen.
+
+[AI Agent (PrettyGoodAI)  ]: Just to confirm, have your name as Michael June. And your date of birth as July first nineteen seventy three. Is that correct? If so, could you please spell your last name for me?
+
+[Patient Bot (GPT-4O)]: It's Chen, spelled C-H-E-N. And the date of birth is July 8, 1973.
+
